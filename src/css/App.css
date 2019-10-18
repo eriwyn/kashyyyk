@@ -9,6 +9,10 @@
 
 
 
-.App-link {
-  color: #09d3ac;
+a:hover{
+  color:white;
+}
+a{
+  color:white;
+  text-decoration: none;
 }
