@@ -1,0 +1,24 @@
+.App-header {
+  position:fixed;
+  padding-top: 0;
+  width:100vw;
+  background-color: #282c34;
+  height: 10vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+ul{
+  width:100vw;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+navbar{
+  display:flex;
+  width:100vw;
+  justify-content: space-around;
+}

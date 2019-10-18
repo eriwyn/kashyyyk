@@ -1,13 +1,9 @@
 import React from 'react';
 import '../css/App.css';
-import Header from './Header.js'
+import Accueil from './Accueil.js'
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-    </div>
-  );
+  return <Accueil/>
 }
 
 export default App;
