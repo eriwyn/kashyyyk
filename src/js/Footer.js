@@ -8,12 +8,12 @@ class Footer extends React.Component{
   render(){
 
 
-    return  <navbar>
+    return  <nav>
           <ul>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="#">A propos</a></li>
           </ul>
-        </navbar>
+        </nav>
 
     }
 }

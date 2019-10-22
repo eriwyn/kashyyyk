@@ -7,7 +7,7 @@ class Header extends React.Component{
   render(){
 
 
-    return <navbar>
+    return <nav>
           <ul>
             <li><img src="#"/></li>
             <li><a href="#">Accueil</a></li>
@@ -16,7 +16,7 @@ class Header extends React.Component{
             <li><a href="#">Création tableau</a></li>
             <li><a href="#">Se connecter</a></li>
           </ul>
-        </navbar>
+        </nav>
 
     }
 }
