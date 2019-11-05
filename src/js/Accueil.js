@@ -20,3 +20,6 @@ class Accueil extends React.Component{
     }
 }
 export default Accueil;
+
+/*<AccueilBody/>
+<div className="App-footer"><Footer/></div>-*/

@@ -12,7 +12,6 @@ class AccueilBody extends React.Component{
       <p>Créez des formulaires, des tableaux et des menus personnalisés</p>
       <p>Exportez vos propres données</p>
       <p>Une prise en main rapide et gratuite</p>
-      //video de présentation réalisée plus tard
       <div>
         <div class="carte" id="carteForm">
           <h2>Créer un formulaire</h2>
