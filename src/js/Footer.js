@@ -8,13 +8,14 @@ class Footer extends React.Component{
   render(){
 
 
-    return  <nav>
+    return  <footer>
+      <nav>
           <ul>
             <li><a href="#">Mentions légales</a></li>
             <li><a href="#">A propos</a></li>
           </ul>
-        </nav>
-
+      </nav>
+    </footer>
     }
 }
 export default Footer;

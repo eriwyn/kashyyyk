@@ -12,11 +12,10 @@ class Accueil extends React.Component{
 
 
     return  <div className="page">
-      <div className="App-header"><Header/></div>
+      <Header/>
       <AccueilBody/>
-      <div className="App-footer"><Footer/></div>
+      <Footer/>
     </div>
-
     }
 }
 export default Accueil;
