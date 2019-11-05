@@ -1,7 +1,12 @@
+
+
+$headerHeight : 80px;
+
 header {
   position:fixed;
   top: 0;
   width:100vw;
+  height:$headerHeight;
   background-color: #282c34;
   display: flex;
   font-size: calc(10px + 2vmin);

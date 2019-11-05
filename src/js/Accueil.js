@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header.js'
 import AccueilBody from './AccueilBody.js'
 import Footer from './Footer.js'
-import '../css/Accueil.css';
+import '../css/Accueil.scss';
 
 class Accueil extends React.Component{
   constructor(props){

@@ -1,7 +1,8 @@
 import React from 'react';
-import '../css/App.css';
-import Accueil from './Accueil.js'
 import 'normalize.css'
+import '../css/App.scss';
+import Accueil from './Accueil.js'
+
 
 
 function App() {

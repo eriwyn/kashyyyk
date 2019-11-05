@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/AccueilBody.css';
+import '../css/AccueilBody.scss';
 class AccueilBody extends React.Component{
   constructor(props){
     super(props);
@@ -9,10 +9,12 @@ class AccueilBody extends React.Component{
 
     return  <main>
       <h1>Kashyyyk</h1>
-      <p>Créez des formulaires, des tableaux et des menus personnalisés</p>
-      <p>Exportez vos propres données</p>
-      <p>Une prise en main rapide et gratuite</p>
-      <div>
+      <div className="PhrasesAccroches">
+        <p className="paragraphePresentationAccueil">Créez des formulaires, des tableaux et des menus personnalisés</p>
+        <p className="paragraphePresentationAccueil">Exportez vos propres données</p>
+        <p className="paragraphePresentationAccueil">Une prise en main rapide et gratuite</p>
+      </div>
+      <div className="divCarte">
         <div className="carte" id="carteForm">
           <h2>Créer un formulaire</h2>
         </div>

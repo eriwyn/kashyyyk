@@ -1,0 +1,29 @@
+@import "Header";
+
+main{
+  margin-top: $headerHeight;
+}
+
+h1{
+  color:#00EDD1;
+  text-align:center;
+  font-size:4em;
+}
+
+.PhrasesAccroches{
+  display:flex;
+}
+
+.paragraphePresentationAccueil{
+  font-size:2em;
+  text-align:center;
+  width:33vw;
+}
+
+.divCarte{
+  display:flex;
+}
+.carte{
+  width:33vw;
+  text-align:center;
+}
