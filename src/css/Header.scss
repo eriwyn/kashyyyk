@@ -1,6 +1,6 @@
+@import "Variables";
 
 
-$headerHeight : 80px;
 
 header {
   position:fixed;
@@ -10,7 +10,7 @@ header {
   background-color: #282c34;
   display: flex;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:$colorClaire;
 }
 
 ul{
@@ -18,4 +18,13 @@ ul{
   list-style: none;
   display: flex;
   justify-content: space-around;
+}
+li{
+  & a:hover{
+  color:$colorClaire;}
+
+  & a{
+  color:$colorClaire;
+  text-decoration: none;
+  }
 }

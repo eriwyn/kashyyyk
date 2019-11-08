@@ -6,11 +6,11 @@ class AProposBody extends React.Component{
   render(){
 
     return  <div >
-      <h1>A Propos</h1>
+      <h2>A Propos</h2>
       <div>
         <h2>Qui sommes nous?</h2>
         <p>Nous sommes un groupe de 3 étudiants en licence pro en mmi-développement web à l'IUT de Haguenau.</p>
-        <img src=#>
+        <img src="#"/>
       </div>
       <div>
         <h2>Notre projet</h2>

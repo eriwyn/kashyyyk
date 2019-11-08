@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import '../css/Header.scss';
+import Accueil from './Accueil.js';
 class Header extends React.Component{
   constructor(props){
     super(props);
@@ -7,11 +9,12 @@ class Header extends React.Component{
   render(){
 
 
-    return <header>
+    return <Router>
+    <header>
       <nav>
           <ul>
             <li><img src="#"/></li>
-            <li><a href="#">Accueil</a></li>
+            <li><Link to="/Accueil">Accueil</Link></li>
             <li><a href="#">Création formulaire</a></li>
             <li><a href="#">Création menu</a></li>
             <li><a href="#">Création tableau</a></li>
@@ -19,7 +22,7 @@ class Header extends React.Component{
           </ul>
         </nav>
       </header>
-
+    </Router>
     }
 }
 export default Header;

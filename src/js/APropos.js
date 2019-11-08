@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header.js'
 import Footer from './Footer.js'
-import MentionsLegalesBody from './MentionsLegalesBody.js'
+import AProposBody from './AProposBody.js'
 
 class APropos extends React.Component{
   constructor(props){
@@ -11,9 +11,9 @@ class APropos extends React.Component{
 
 
     return  <div className="page">
-      <div className="App-header"><Header/></div>
+      <Header/>
       <AProposBody/>
-      <div className="App-footer"><Footer/></div>
+      <Footer/>
     </div>
 
     }

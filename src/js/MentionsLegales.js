@@ -11,9 +11,9 @@ class MentionsLegales extends React.Component{
 
 
     return  <div className="page">
-      <div className="App-header"><Header/></div>
+      <Header/>
       <MentionsLegalesBody/>
-      <div className="App-footer"><Footer/></div>
+      <Footer/>
     </div>
 
     }
