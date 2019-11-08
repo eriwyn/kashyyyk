@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header.js'
-import Footer from './Footer.js'
-import MentionsLegalesBody from './MentionsLegalesBody.js'
-
 class MentionsLegales extends React.Component{
   constructor(props){
     super(props);
@@ -10,10 +6,9 @@ class MentionsLegales extends React.Component{
   render(){
 
 
-    return  <div className="page">
-      <Header/>
-      <MentionsLegalesBody/>
-      <Footer/>
+    return  <div >
+      <h2>Mentions légales</h2>
+      //ici se trouveront les mentions légales une fois qu'on aura des noms de sites et de domaine etc
     </div>
 
     }

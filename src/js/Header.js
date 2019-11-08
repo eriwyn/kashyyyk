@@ -9,12 +9,11 @@ class Header extends React.Component{
   render(){
 
 
-    return <Router>
-    <header>
+    return <header>
       <nav>
           <ul>
             <li><img src="#"/></li>
-            <li><Link to="/Accueil">Accueil</Link></li>
+            <li><Link to="/">Accueil</Link></li>
             <li><a href="#">Création formulaire</a></li>
             <li><a href="#">Création menu</a></li>
             <li><a href="#">Création tableau</a></li>
@@ -22,7 +21,7 @@ class Header extends React.Component{
           </ul>
         </nav>
       </header>
-    </Router>
+
     }
 }
 export default Header;
