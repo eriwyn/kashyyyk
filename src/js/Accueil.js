@@ -9,11 +9,11 @@ class Accueil extends React.Component{
 
     return  <main className="MainAccueil">
       <h1>Kashyyyk</h1>
-      <div className="PhrasesAccroches">
+
         <p className="paragraphePresentationAccueil">Créez des formulaires, des tableaux et des menus personnalisés</p>
         <p className="paragraphePresentationAccueil">Exportez vos propres données</p>
         <p className="paragraphePresentationAccueil">Une prise en main rapide et gratuite</p>
-      </div>
+    
       <div className="divButton">
           <a href="#" className="buttonAccueil" id="buttonForm"><h2>Créer un formulaire</h2></a>
           <a href="#" className="buttonAccueil" id="buttonTableau"><h2>Créer un tableau</h2></a>

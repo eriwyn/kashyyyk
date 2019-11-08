@@ -5,7 +5,7 @@ import Footer from './Footer.js';
 import '../css/Footer.scss';
 import Header from './Header.js';
 import '../css/Header.scss';
-import {BrowserRouter as Router,Switch,Route,Link,useParams} from "react-router-dom";
+import {BrowserRouter as Router,Route} from "react-router-dom";
 
 
 

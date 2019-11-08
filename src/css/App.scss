@@ -13,8 +13,10 @@ a{
 }
 main{
     margin-top: $headerHeight;
+    width:100vw;
 }
 .mainPage{
   background-color: $colorClaire;
   height:calc(100vh - #{$footerHeight} - #{$headerHeight} - #{$headerHeight});
+  width:100vw;
 }
