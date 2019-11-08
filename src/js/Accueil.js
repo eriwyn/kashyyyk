@@ -7,7 +7,7 @@ class Accueil extends React.Component{
   render(){
 
 
-    return  <main>
+    return  <main className="MainAccueil">
       <h1>Kashyyyk</h1>
       <div className="PhrasesAccroches">
         <p className="paragraphePresentationAccueil">Créez des formulaires, des tableaux et des menus personnalisés</p>

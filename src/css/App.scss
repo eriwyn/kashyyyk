@@ -11,3 +11,10 @@
 a{
   text-decoration: none;
 }
+main{
+    margin-top: $headerHeight;
+}
+.mainPage{
+  background-color: $colorClaire;
+  height:calc(100vh - #{$footerHeight} - #{$headerHeight} - #{$headerHeight});
+}
