@@ -1,0 +1,30 @@
+@import "Variables";
+
+
+
+header {
+  position:fixed;
+  top: 0;
+  width:100vw;
+  height:$headerHeight;
+  background-color: #282c34;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color:$colorClaire;
+}
+
+ul{
+  width:100vw;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+li{
+  & a:hover{
+  color:$colorClaire;}
+
+  & a{
+  color:$colorClaire;
+  text-decoration: none;
+  }
+}

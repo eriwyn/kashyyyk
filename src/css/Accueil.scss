@@ -1,0 +1,54 @@
+@import "Header";
+@import "Variables";
+body{
+  background-color:$colorSombre;
+}
+.mainAccueil{
+  background-color:$colorSombre;
+}
+
+h1{
+  color:$colorBleuClair;
+  text-align:center;
+  font-size:4em;
+}
+
+.PhrasesAccroches{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.paragraphePresentationAccueil{
+  font-size:1.5em;
+  width:100vw;
+  color:$colorClaire;
+}
+
+.divButton{
+  height:10vh;
+  display:flex;
+  justify-content: space-around;
+}
+.buttonAccueil{
+  width:30vw;
+  text-align:center;
+  border:solid 1px  $colorBleuClair;
+  & h2 {color:$colorBleuClair;}
+}
+.buttonAccueil:hover{
+  border:solid 1px $colorSombre;
+  background-color: $colorBleuClair;
+  & h2{color:$colorSombre}
+}
+
+.divFlexCenter{
+  @include divFlexNoWrapSpace;
+  & .h2AccueilCompte{
+    width:$ligneComplete;
+    text-align:center;
+    color:$colorClaire;}
+  & p{
+    width:$ligneComplete;
+    text-align:center;
+    color:$colorClaire;}
+}
