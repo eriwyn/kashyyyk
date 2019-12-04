@@ -9,7 +9,6 @@ body{
 
 h1{
   color:$colorBleuClair;
-  text-align:center;
   font-size:4em;
 }
 
@@ -17,7 +16,6 @@ h1{
 
 .paragraphePresentationAccueil{
   font-size:1.5em;
-  width:100vw;
   color:$colorClaire;
 }
 
@@ -25,27 +23,25 @@ h1{
   height:10vh;
   display:flex;
   justify-content: space-around;
-}
-.buttonAccueil{
-  width:30vw;
-  text-align:center;
-  border:solid 1px  $colorBleuClair;
-  & h2 {color:$colorBleuClair;}
-}
-.buttonAccueil:hover{
-  border:solid 1px $colorSombre;
-  background-color: $colorBleuClair;
-  & h2{color:$colorSombre}
+  .ghostButton{
+    flex:1;
+    &:not(:first-child){margin-left: 10px;}
+  }
 }
 
-.divFlexCenter{
-  @include divFlexNoWrapSpace;
-  & .h2AccueilCompte{
-    width:$ligneComplete;
-    text-align:center;
+.divCompteAccueil{
+  margin-top:10px;
+  margin-left:20%;
+  margin-right:20%;
+  border:1px solid $colorBleuClair;
+  text-align: center;
+   .h2AccueilCompte{
     color:$colorClaire;}
-  & p{
-    width:$ligneComplete;
-    text-align:center;
+   p{
     color:$colorClaire;}
+  .ghostButton{
+    margin:auto;
+    width:30%;
+    margin-bottom:10px;
+  }
 }

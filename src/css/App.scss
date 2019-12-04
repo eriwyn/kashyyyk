@@ -13,10 +13,24 @@ a{
 }
 main{
     margin-top: $headerHeight;
-    width:100vw;
 }
 .mainPage{
-  background-color: $colorClaire;
-  height:calc(100vh - #{$footerHeight} - #{$headerHeight} - #{$headerHeight});
-  width:100vw;
+  background-color: $colorSombre;
+  color:$colorClaire;
+  flex:1;
 }
+html{
+  height:100%;
+}
+body{
+  height: 100%;
+}
+ body>div, body>div>div,  body>div>div>div{
+  height:100%;
+
+}
+
+ body>div>div>div{
+   display:flex;
+   flex-direction: column;
+ }
