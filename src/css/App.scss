@@ -25,12 +25,12 @@ html{
 body{
   height: 100%;
 }
- body>div, body>div>div,  body>div>div>div{
+ body>div, body>div>div, {
   height:100%;
 
 }
 
- body>div>div>div{
+ body>div>div{
    display:flex;
    flex-direction: column;
  }

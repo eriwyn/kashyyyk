@@ -1,6 +1,6 @@
 import React from 'react';
 import 'normalize.css';
-import {BrowserRouter as Router,Switch,Link,useParams} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import Accueil from './Accueil.js';
 import MentionsLegales from './MentionsLegales.js';
 import APropos from './APropos.js';

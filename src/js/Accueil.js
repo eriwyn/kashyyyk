@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/Accueil.scss';
 import '../css/ghostButton.scss';
 import GhostButton from './GhostButton.js';

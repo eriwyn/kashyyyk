@@ -28,6 +28,10 @@ li{
 
   & a{
   color:$colorClaire;
-  text-decoration: none;
   }
+}
+
+.active{
+  font-weight: bold;
+  color:$colorBleuClair;
 }
