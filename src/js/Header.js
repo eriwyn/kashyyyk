@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 import '../css/Header.scss';
 import Accueil from './Accueil.js';
-class Header extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-
-
+export default function Header(){
     return <header>
       <nav>
           <ul>
@@ -23,5 +17,3 @@ class Header extends React.Component{
       </header>
 
     }
-}
-export default Header;

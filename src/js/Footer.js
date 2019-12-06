@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import '../css/Footer.scss';
 import {Link} from "react-router-dom";
 import MentionsLegales from './MentionsLegales.js';
 import APropos from './APropos.js';
 import App from './App.js';
-class Footer extends React.Component{
-  constructor(props){
-    super(props);
-  }
 
-  render(){
 
+export default function Footer() {
 
     return <footer>
         <nav>
@@ -21,6 +17,4 @@ class Footer extends React.Component{
         </nav>
     </footer>
 
-    }
 }
-export default Footer;

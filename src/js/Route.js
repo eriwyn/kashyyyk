@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'normalize.css';
 import {BrowserRouter as Router,Switch,Link,useParams} from "react-router-dom";
 import Accueil from './Accueil.js';
@@ -6,12 +6,8 @@ import MentionsLegales from './MentionsLegales.js';
 import APropos from './APropos.js';
 import App from './App.js';
 
-class Route extends React.Component{
-  constructor(props){
-    super(props);
-  }
+export default function Route (){
 
-  render(){
     return <Router>
       <div>
         <App exact path="/" component={Accueil}/>
@@ -19,6 +15,4 @@ class Route extends React.Component{
         <App exact path="/APropos" component={APropos}/>
       </div>
     </Router>
-  }
 }
-export default Route;

@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
-class APropos extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
+import React  from 'react';
 
+export default function  APropos(){
     return  <main className="mainPage" >
       <h2>A Propos</h2>
       <div>
@@ -21,7 +17,3 @@ class APropos extends React.Component{
     </main>
 
     }
-}
-
-
-export default APropos;
