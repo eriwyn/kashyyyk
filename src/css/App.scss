@@ -34,3 +34,12 @@ body{
    display:flex;
    flex-direction: column;
  }
+
+ .active{
+ text-decoration: underline;
+ color:$colorBleuClair;
+
+ &:hover{
+   color:$colorBleuClair;
+ }
+ }
