@@ -19,7 +19,7 @@ export default function App(){
   return <div>
           <Header/>
             <Switch>
-              <Route exact path="/" component={Accueil}/>
+              <Route exact path="/Accueil" component={Accueil}/>
               <Route exact path="/MentionsLegales" component={MentionsLegales}/>
               <Route exact path="/APropos" component={APropos}/>
             </Switch>
