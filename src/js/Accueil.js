@@ -10,9 +10,9 @@ export default function Accueil (){
         <p className="paragraphePresentationAccueil">Exportez vos propres données</p>
         <p className="paragraphePresentationAccueil">Une prise en main rapide et gratuite</p>
       <div className="divButton">
-          <GhostButton text="Créer un formulaire"/>
-          <GhostButton text="Créer un tableau"/>
-          <GhostButton text="Créer un menu"/>
+          <GhostButton lien="/formulaire" text="Créer un formulaire"/>
+          <GhostButton lien="#" text="Créer un tableau"/>
+          <GhostButton lien="#" text="Créer un menu"/>
       </div>
       <div className="divCompteAccueil">
         <h2 className="h2AccueilCompte">Vous voulez sauvegarder votre travail ?</h2>
