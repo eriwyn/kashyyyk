@@ -9,6 +9,7 @@ import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import Accueil from './Accueil.js';
 import MentionsLegales from './MentionsLegales.js';
 import APropos from './APropos.js';
+import Formulaire from './Formulaire.js';
 
 
 
@@ -23,6 +24,7 @@ export default function App(){
               <Route exact path="/Accueil" component={Accueil}/>
               <Route exact path="/MentionsLegales" component={MentionsLegales}/>
               <Route exact path="/APropos" component={APropos}/>
+              <Route exact path="/formulaire" component={Formulaire}/>
             </Switch>
           <Footer/>
         </div>
