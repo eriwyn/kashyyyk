@@ -1,8 +1,10 @@
 import React  from 'react';
 import RadioBtn from './components/creations/RadioBtn.js';
+import Select from './components/creations/Select.js';
 export default function MentionsLegales (){
     return  <main className="mainPage">
-      <RadioBtn number="2" id="rdBtn" name="bonsoir" values=' "bonsoir" , "bonjour" '/>
+      <RadioBtn id="rdBtn" name="bonsoir" values=' "bonsoir" , "bonjour" '/>
+      <Select  id="select" name="bonsoir" values=' "bonsoir" , "bonjour" ' texts=' "bonsoir" , "bonjour" '/>
       <h2>Informations légales</h2>
 <h3>1. Présentation du site.</h3>
 <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.kashyyyk.stark.mmi-unistra.fr/">www.kashyyyk.stark.mmi-unistra.fr</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
