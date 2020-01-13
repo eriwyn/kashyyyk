@@ -18,7 +18,7 @@ export default function Select(props){
 
   return <div>
     <select id={props.id} className={props.className} value={value} onChange={changeSelect}>
-      codeSelect.map();
+      {codeSelect}
     </select></div>;
 
 }
