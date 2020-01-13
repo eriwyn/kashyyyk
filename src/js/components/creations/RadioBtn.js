@@ -9,4 +9,4 @@ export default function RadioButton(props){
     codeRadioBtn.push(<div><input type="radio" id={id} name={props.name}></input><label htmlFor={id}>{value}</label></div>)
   }
     return codeRadioBtn;
-    }
+}
