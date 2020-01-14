@@ -6,5 +6,6 @@ export default function ListeElements() {
 
     return <div className="listeElements">
         <Element mode="button" />
+        <Element mode="text" />
     </div>
 }
