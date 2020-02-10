@@ -8,7 +8,7 @@ export default function MentionsLegales (){
       <RadioBtn id="rdBtn" name="bonsoir" values=' "bonsoir" , "bonjour" '/>
       <Select  id="select" name="bonsoir" values=' "bonsoir" , "bonjour" ' texts=' "bonsoir" , "bonjour" '/>
       <ImporterJson id="json" text="Importez votre json" name="json"/>
-      <AideJson text="Votre json doit avoir cette forme"/>
+      <AideJson text='Votre json doit être sous cette forme: {"elements":[{"genre":"input","libelle":"nom","type":"text"} ,{"genre":"select","libelle":"selection","options":["option1","option2","option3"]},{"genre":"radio","libelle":"pays","values":["value1","value2","value3"]}]}'/>
 
 
       <h2>Informations légales</h2>
