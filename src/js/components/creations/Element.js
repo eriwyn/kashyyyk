@@ -12,7 +12,7 @@ export default function Element(props) {
       
     }      
 
-    switch (props.mode) {
+    switch (props.type) {
         case 'button':
             return <div>
                 <button className="element" id="button" draggable='true' onDragStart={dragStartHandler}>button</button>

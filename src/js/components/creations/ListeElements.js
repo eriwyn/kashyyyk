@@ -5,7 +5,7 @@ import Element from './Element.js';
 export default function ListeElements() {
 
     return <div className="listeElements">
-        <Element mode="button" />
-        <Element mode="text" />
+        <Element type="button" mode="html" />
+        <Element type="text" mode="html" />
     </div>
 }
