@@ -1,7 +1,7 @@
 import React  from 'react';
 import '../../../css/Creation.scss';
 import BoiteAOutils from './BoiteAOutils.js';
-import Previsiualisation from './Previsiualisation';
+import Previsualisation from './Previsualisation';
 import ListeElements from './ListeElements';
 
 
@@ -11,7 +11,7 @@ export default function FenetreCreation(props) {
         <h1>Création</h1>
 
         <BoiteAOutils />
-        <Previsiualisation />
+        <Previsualisation />
         <ListeElements />
     </div>
 }
