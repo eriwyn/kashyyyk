@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from "react-redux";
 import {NavLink} from "react-router-dom";
 import '../css/Header.scss';
 import Accueil from './Accueil.js';
-export default function Header(){
+function Header(){
 
     return <header>
       <nav>
@@ -18,3 +19,9 @@ export default function Header(){
       </header>
 
     }
+
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(UserForm);    
