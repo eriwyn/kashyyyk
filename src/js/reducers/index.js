@@ -1,5 +1,7 @@
-import ConnexionHeader from './ConnexionHeader';
+import ConnexionReducer from './ConnexionReducer';
+import FormReducer from './FormReducer';
 
 export default {
-  ConnexionHeader: ConnexionHeader
+  connexionReducer: ConnexionReducer,
+  formReducer: FormReducer
 };

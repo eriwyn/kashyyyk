@@ -1,7 +1,7 @@
-import logger from "redux-logger";
+import logger from 'redux-logger';
 import { createStore, applyMiddleware, combineReducers } from "redux";
 
-import reducers from "./reducers";
+import reducers from "./js/reducers";
 
 // on créé un store de données
 const store = createStore(
