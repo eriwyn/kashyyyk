@@ -1,14 +1,10 @@
 import React, {useState}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
-import PrevisualisationCode from './PrevisualisationCode.js';
-import PrevisualisationElements from './PrevisualisationElements.js';
 import { connect } from "react-redux";
 
 
 const Previsualisation = props => {
-    const [arrayForm, setForm]=useState([]);
-
     function dragOverHandler(event) {
         event.preventDefault();
     }
@@ -22,7 +18,7 @@ const Previsualisation = props => {
         switch (id) {
             case 'button':
                 const button = {"genre": "input", "libelle": "button", "type": "button"}
-                setForm(arrayForm.concat(button))
+                props.addElement(button)
                 break;
         
             default:
@@ -32,10 +28,9 @@ const Previsualisation = props => {
 
 
     return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
-        {/* <PrevisualisationCode table={arrayForm} /> */}
         {props.formList.map(element => {
-            return <p></p>
-      })}
+            console.log(element);
+        })}
     </div>
 }
 
@@ -53,6 +48,9 @@ const mapDispatchToProps = dispatch => {
         // on utilisera cette fonction dans le composant via : props.addUser
         addElement: element => {
             dispatch({ type: "ADD_ELEMENT", data: { element } });
+        },
+        removeElement: element => {
+            dispatch({ type: "REMOVE_ELEMENT", data: { element } });
         }
     };
 };
