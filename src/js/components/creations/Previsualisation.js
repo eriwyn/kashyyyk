@@ -17,7 +17,7 @@ const Previsualisation = props => {
 
         switch (id) {
             case 'button':
-                const button = {"genre": "input", "libelle": "button", "type": "button"}
+                const button = {"genre": "input", "libelle": "button", "type": "button", "id": "test"}
                 props.addElement(button)
                 break;
         

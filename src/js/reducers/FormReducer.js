@@ -1,8 +1,8 @@
 const initialState = {
     "elements": [
-        {"genre":"input","libelle":"nom","type":"text"},
-        {"genre":"select","libelle":"selection","options":["option1","option2","option3"]},
-        {"genre":"radio","libelle":"pays","values":["val1","val2","val3"]}
+        // {"genre":"input","libelle":"nom","type":"text"},
+        // {"genre":"select","libelle":"selection","options":["option1","option2","option3"]},
+        // {"genre":"radio","libelle":"pays","values":["val1","val2","val3"]}
     ]
 };
   
