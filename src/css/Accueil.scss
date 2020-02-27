@@ -45,3 +45,14 @@ h1{
     margin-bottom:10px;
   }
 }
+
+.flexImageMenu{
+  display:flex;
+  justify-content:space-around;
+  margin-bottom:20px;
+  align-items:center;
+}
+
+.textCoteImageMenu{
+  font-size: calc(12px + 2vmin);
+}

@@ -21,7 +21,7 @@ export default function AideJson(props){
         
     function click(){
 
-        console.log("fuck u")
+        console.log("walla")
         setViewTooltip('none');
         window.removeEventListener("click",click);
 

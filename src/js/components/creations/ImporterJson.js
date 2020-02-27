@@ -120,8 +120,8 @@ export default class ImporterJson extends React.Component {
       <label for="json">Importer votre json</label>
       <input type="file"
       id="json" name="importJson"
-      accept=".json" ref={this.fileInput}></input>
-    <button type="submit">Générer le code</button>
+      accept=".json" ref={this.fileInput} class="inputFile"></input>
+    <button type="submit" class="bouton">Générer le code</button>
   </form>
   }
 }

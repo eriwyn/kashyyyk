@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./../../../css/Bouton.scss";
 
 export default class ImporterCsv extends React.Component {
   constructor(props) {
@@ -53,8 +53,8 @@ export default class ImporterCsv extends React.Component {
       <label for="csv">Importer votre csv</label>
       <input type="file"
       id="csv" name="importCsv"
-      accept=".csv" ref={this.fileInput}></input>
-    <button type="submit">Générer le code</button>
+      accept=".csv" ref={this.fileInput} class="inputFile"></input>
+    <button type="submit" class="bouton">Générer le code</button>
   </form>
   }
 }
