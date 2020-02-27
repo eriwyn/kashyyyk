@@ -24,7 +24,7 @@ function createTextAreaHtml(element) {
     let inputHtml = 
         '<div>' +
             '<label for="' + element.id + '">' + element.libelle + '</label>' +
-            '<textarea id="' + element.id + '" name="' + element.id + '" placeholder="' + element.texte + '">' +
+            '<textarea id="' + element.id + '" name="' + element.id + '" placeholder="' + element.texte + '"></textarea>' +
         '</div>';
 
     return inputHtml;
@@ -48,7 +48,21 @@ function createSelectHtml(element) {
     return inputHtml;
 }
 
-//{"type": "select", "libelle" : "Menu déroulant", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
+function createRadioHtml(element) {
+    let inputHtml = "";
+        
+    element.valeurs.forEach(value => {
+        inputHtml += 
+        '<div>'+
+            '<input type="radio" id="' + slugify(value) + '" name="' + element.id + '" value="' + slugify(value) + '">' +
+            '<label for="' + slugify(value) + '">' + value + '</label>' +
+        '</div>';
+    });
+
+    return inputHtml;
+}
+
+//{"type": "radio", "libelle" : "Boutons radio", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
 
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
@@ -69,6 +83,10 @@ export default function jsonToHtml(array) {
 
             case "select":
                 contentHtml += createSelectHtml(element);
+                break;
+
+            case "radio":
+                contentHtml += createRadioHtml(element);
                 break;
          
              default:

@@ -48,6 +48,17 @@ export default function Element(props) {
         </div>
     }
 
+    const RadioElement = () => {
+        return <div>
+            {props.valeurs.map((valeur, index) => {
+                return <div>
+                    <input key={index} type="radio" id={slugify(valeur)} name={elementId} value={slugify(valeur)} />
+                    <label htmlFor={slugify(valeur)}>{valeur}</label>
+                </div>
+            })}
+        </div>
+    }
+
     let elementContent;
     let elementObject;
 
@@ -90,6 +101,16 @@ export default function Element(props) {
                 "valeurs": props.valeurs
             };
             break;
+
+        case 'radio':
+            elementContent =  <RadioElement />
+            elementObject = {
+                "type": props.type, 
+                "id": elementId,
+                "libelle": props.libelle,
+                "valeurs": props.valeurs
+            };
+            break;    
     
         default:
             break;
