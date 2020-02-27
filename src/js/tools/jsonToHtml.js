@@ -1,10 +1,10 @@
 import beautify_html  from 'html';
 
-function createInputHtml(element) {
+function createInputTextHtml(element) {
     let inputHtml = 
         '<div>' +
             '<label for="' + element.id + '">' + element.libelle + '</label>' +
-            '<input id="' + element.id + '" name="' + element.id + '" type="' + element.type+ '">' +
+            '<input type="text" id="' + element.id + '" name="' + element.id + '">' +
         '</div>';
 
     return inputHtml;
@@ -24,12 +24,8 @@ export default function jsonToHtml(array) {
 
     array.forEach(element => {
         switch (element.type) {
-            case "input":
-                contentHtml += createInputHtml(element);
-                break;
-
             case "champ_texte":
-                contentHtml += createInputHtml(element);
+                contentHtml += createInputTextHtml(element);
                 break;
 
             case "bouton":
