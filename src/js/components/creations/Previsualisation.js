@@ -2,6 +2,7 @@ import React, {useState}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
 import { connect } from "react-redux";
+import jsonToHtml from '../../tools/jsonToHtml.js';
 
 
 const Previsualisation = props => {
@@ -16,7 +17,7 @@ const Previsualisation = props => {
           .getData('text');
 
         switch (id) {
-            case 'button':
+            case 'elementButton':
                 const button = {"genre": "input", "libelle": "button", "type": "button", "id": "test"}
                 props.addElement(button)
                 break;
@@ -27,17 +28,13 @@ const Previsualisation = props => {
     }
 
 
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
-        {props.formList.map(element => {
-            console.log(element);
-        })}
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} dangerouslySetInnerHTML={{__html: jsonToHtml(props.formList)}}>
     </div>
 }
 
 // définition des données à récupérer dans le store
 const mapStateToProps = reduxState => {
     return {
-        // on accédera à ces donnnées dans le composant via : props.userList
         formList: reduxState.formReducer.elements
     };
 };
@@ -45,7 +42,6 @@ const mapStateToProps = reduxState => {
 // définition des actions dispatchables
 const mapDispatchToProps = dispatch => {
     return {
-        // on utilisera cette fonction dans le composant via : props.addUser
         addElement: element => {
             dispatch({ type: "ADD_ELEMENT", data: { element } });
         },

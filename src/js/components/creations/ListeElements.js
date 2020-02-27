@@ -4,8 +4,8 @@ import Element from './Element.js';
 
 export default function ListeElements() {
 
-    return <div className="listeElements">
-        <Element type="button" mode="html" />
-        <Element type="text" mode="html" />
-    </div>
+    return <ul className="listeElements">
+        <li><Element type="button" mode="html" /></li>
+        <li><Element type="text" mode="html" /></li>
+    </ul>
 }

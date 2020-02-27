@@ -14,13 +14,13 @@ export default function Element(props) {
 
     switch (props.type) {
         case 'button':
-            return <div>
-                <button className="element" id="button" draggable='true' onDragStart={dragStartHandler}>button</button>
+            return <div className="element" id="elementButton" draggable='true' onDragStart={dragStartHandler}>
+                <button>Bouton</button>
             </div>
             break;
         case 'text':
-            return <div>
-                <input type="text" className="element" id="text" draggable='true' onDragStart={dragStartHandler} />
+            return <div className="element" id="elementText" draggable='true' onDragStart={dragStartHandler}>
+                <input type="text"/>
             </div>
             break;
     

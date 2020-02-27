@@ -46,3 +46,11 @@
 .element {
   cursor: move;
 }
+
+.element * {
+  pointer-events: none;
+}
+
+.listeElements li {
+  margin: 10px;
+}
