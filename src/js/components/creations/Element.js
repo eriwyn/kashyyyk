@@ -5,21 +5,17 @@ import '../../../css/Creation.scss';
 export default function Element(props) {
 
     const [selected, setSelected] = useState("");
+    const [elementJson, setElementJson] = useState("");
 
     function dragStartHandler(event) {
         event
           .dataTransfer
-          .setData('text/plain', event.target.id);
+          .setData('text/plain', elementJson);
     }
-
-
-    useEffect(() => {
-        setSelected(props.selected);
-    });
 
     const TextElement = () => {
         return <div>
-            <label for={props.id}>{props.libelle}</label>
+            <label htmlFor={props.id}>{props.libelle}</label>
             <input type="text" id={props.id} name={props.id} placeholder={props.texte} />
         </div>
     }
@@ -30,23 +26,39 @@ export default function Element(props) {
         </div>
     }
 
-    const ContentElement = () => {
-        switch (props.type) {
-            case 'texte':
-                return <TextElement />
-                break;
-            
-            case 'bouton':
-                return <ButtonElement />
-                break;
+    let elementContent;
+    let elementObject;
+
+    switch (props.type) {
+        case 'champ_texte':
+            elementContent = <TextElement />
+            elementObject = {
+                "type": props.type,
+                "id": props.id,
+                "libelle": props.libelle, 
+                "texte": props.texte
+            };
+            break;
         
-            default:
-                break;
-        }
+        case 'bouton':
+            elementContent =  <ButtonElement />
+            elementObject = {
+                "type": props.type, 
+                "id": props.id,
+                "texte": props.texte
+            };
+            break;
+    
+        default:
+            break;
     }
 
-    
+    useEffect(() => {
+        setSelected(props.selected);
+        setElementJson(JSON.stringify(elementObject));
+    });
+
     return <div id={props.id + "Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
-        <ContentElement />
-    </div>
+        {elementContent}
+    </div>   
 }

@@ -7,7 +7,20 @@ import jsonToHtml from '../../tools/jsonToHtml.js';
 
 const Previsualisation = props => {
 
-    const [formList, setFormList] = useState([]);
+    const [numberModifications, setNumberModifications] = useState(0);
+    const [elementSelected, setElementSelected] = useState("");
+
+    function isSelected(elementId) {
+        if (elementId === elementSelected) {
+            return "selected";
+        }
+
+        return "";
+    }
+
+    function clickHandler(event) {
+        setElementSelected(event.target.id);
+    }
 
     function dragOverHandler(event) {
         event.preventDefault();
@@ -15,28 +28,24 @@ const Previsualisation = props => {
 
     function dropHandler(event) {
         event.preventDefault();
-        const id = event
+        const elementJson = event
           .dataTransfer
           .getData('text');
 
-        switch (id) {
-            case 'elementButton':
-                const button = {"genre": "input", "libelle": "button", "type": "button", "id": "test"}
-                props.addElement(button)
-                break;
-        
-            default:
-                break;
-        }
+        props.addElement(elementJson)
+        setNumberModifications(numberModifications + 1);
     }
 
     useEffect(() => {
-        setFormList(props.formList);
+        console.log('test');
     });
 
-
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} dangerouslySetInnerHTML={{__html: jsonToHtml(formList)}}>
-        
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
+        <form>
+            {props.formList.map((element) => {
+                return <Element key={element.id} type={element.type} id={element.id} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onMouseDown={clickHandler} selected={isSelected(element.id + "Wrapper")} />
+            })}
+        </form>
     </div>
 }
 

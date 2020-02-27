@@ -21,7 +21,7 @@ export default function ListeElements() {
     }
 
     return <ul className="listeElements" onClick={ clickHandler }>
-        <li><Element type="texte" id="textElement" libelle="Champ de texte" texte="Entrez du texte" onMouseDown={clickHandler} selected={isSelected("textElementWrapper")} /></li>
+        <li><Element type="champ_texte" id="textElement" libelle="Champ de texte" texte="Entrez du texte" onMouseDown={clickHandler} selected={isSelected("textElementWrapper")} /></li>
         <li><Element type="bouton" id="buttonElement" texte="Bouton" onMouseDown={clickHandler} selected={isSelected("buttonElementWrapper")} /></li>
     </ul>
 }
