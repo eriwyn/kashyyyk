@@ -24,7 +24,7 @@
   border: solid 1px;
   display: inline-block;
   margin: 20px;
-  background-color: white;
+  background-color: grey;
   vertical-align: top;
 }
 
@@ -45,6 +45,7 @@
 
 .element {
   cursor: move;
+  display: inline-block;
 }
 
 .element * {
@@ -53,4 +54,8 @@
 
 .listeElements li {
   margin: 10px;
+}
+
+.element.selected {
+  border: 2px solid blue;
 }

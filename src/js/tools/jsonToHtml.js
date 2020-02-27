@@ -10,14 +10,31 @@ function createInputHtml(element) {
     return inputHtml;
 }
 
+function createButtonHtml(element) {
+    let inputHtml = 
+        '<div>' +
+            '<button id="' + element.id + '" name="' + element.id + '">' + element.texte + '</button>' +
+        '</div>';
+
+    return inputHtml;
+}
+
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
 
     array.forEach(element => {
-         switch (element.genre) {
-             case "input":
-                 contentHtml += createInputHtml(element);
-                 break;
+        switch (element.type) {
+            case "input":
+                contentHtml += createInputHtml(element);
+                break;
+
+            case "champ_texte":
+                contentHtml += createInputHtml(element);
+                break;
+
+            case "bouton":
+                contentHtml += createButtonHtml(element);
+                break;
          
              default:
                  break;

@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import React, {useState, useEffect}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
 import { connect } from "react-redux";
@@ -6,6 +6,9 @@ import jsonToHtml from '../../tools/jsonToHtml.js';
 
 
 const Previsualisation = props => {
+
+    const [formList, setFormList] = useState([]);
+
     function dragOverHandler(event) {
         event.preventDefault();
     }
@@ -27,8 +30,13 @@ const Previsualisation = props => {
         }
     }
 
+    useEffect(() => {
+        setFormList(props.formList);
+    });
 
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} dangerouslySetInnerHTML={{__html: jsonToHtml(props.formList)}}>
+
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} dangerouslySetInnerHTML={{__html: jsonToHtml(formList)}}>
+        
     </div>
 }
 

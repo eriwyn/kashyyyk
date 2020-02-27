@@ -1,33 +1,52 @@
-import React  from 'react';
+import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
 
 
 export default function Element(props) {
 
+    const [selected, setSelected] = useState("");
+
     function dragStartHandler(event) {
-        console.log(event);
         event
           .dataTransfer
           .setData('text/plain', event.target.id);
-      
-    }      
-
-    switch (props.type) {
-        case 'button':
-            return <div className="element" id="elementButton" draggable='true' onDragStart={dragStartHandler}>
-                <button>Bouton</button>
-            </div>
-            break;
-        case 'text':
-            return <div className="element" id="elementText" draggable='true' onDragStart={dragStartHandler}>
-                <input type="text"/>
-            </div>
-            break;
-    
-        default:
-            break;
     }
-    return <div>
+
+
+    useEffect(() => {
+        setSelected(props.selected);
+    });
+
+    const TextElement = () => {
+        return <div>
+            <label for={props.id}>{props.libelle}</label>
+            <input type="text" id={props.id} name={props.id} placeholder={props.texte} />
+        </div>
+    }
+
+    const ButtonElement = () => {
+        return <div>
+            <button id={props.id} name={props.id}>{props.texte}</button>
+        </div>
+    }
+
+    const ContentElement = () => {
+        switch (props.type) {
+            case 'texte':
+                return <TextElement />
+                break;
+            
+            case 'bouton':
+                return <ButtonElement />
+                break;
         
+            default:
+                break;
+        }
+    }
+
+    
+    return <div id={props.id + "Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
+        <ContentElement />
     </div>
 }
