@@ -52,8 +52,19 @@ export default function Element(props) {
         return <div>
             {props.valeurs.map((valeur, index) => {
                 return <div>
-                    <input key={index} type="radio" id={slugify(valeur)} name={elementId} value={slugify(valeur)} />
-                    <label htmlFor={slugify(valeur)}>{valeur}</label>
+                    <input key={index} type="radio" id={elementId + '_' + slugify(valeur)} name={elementId} value={slugify(valeur)} />
+                    <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
+                </div>
+            })}
+        </div>
+    }
+
+    const CheckBoxElement = () => {
+        return <div>
+            {props.valeurs.map((valeur, index) => {
+                return <div>
+                    <input key={index} type="checkbox" id={elementId + '_' + slugify(valeur)} name={elementId + '_' + slugify(valeur)} />
+                    <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
                 </div>
             })}
         </div>
@@ -69,15 +80,6 @@ export default function Element(props) {
                 "type": props.type,
                 "id": elementId,
                 "libelle": props.libelle, 
-                "texte": props.texte
-            };
-            break;
-        
-        case 'bouton':
-            elementContent =  <ButtonElement />
-            elementObject = {
-                "type": props.type, 
-                "id": elementId,
                 "texte": props.texte
             };
             break;
@@ -107,10 +109,27 @@ export default function Element(props) {
             elementObject = {
                 "type": props.type, 
                 "id": elementId,
-                "libelle": props.libelle,
                 "valeurs": props.valeurs
             };
-            break;    
+            break;
+            
+        case 'checkbox':
+            elementContent =  <CheckBoxElement />
+            elementObject = {
+                "type": props.type, 
+                "id": elementId,
+                "valeurs": props.valeurs
+            };
+            break;
+            
+        case 'bouton':
+            elementContent =  <ButtonElement />
+            elementObject = {
+                "type": props.type, 
+                "id": elementId,
+                "texte": props.texte
+            };
+            break;
     
         default:
             break;

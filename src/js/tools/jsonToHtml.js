@@ -54,15 +54,29 @@ function createRadioHtml(element) {
     element.valeurs.forEach(value => {
         inputHtml += 
         '<div>'+
-            '<input type="radio" id="' + slugify(value) + '" name="' + element.id + '" value="' + slugify(value) + '">' +
-            '<label for="' + slugify(value) + '">' + value + '</label>' +
+            '<input type="radio" id="' + element.id + '_' + slugify(value) + '" name="' + element.id + '" value="' + slugify(value) + '">' +
+            '<label for="' + element.id + '_' + slugify(value) + '">' + value + '</label>' +
         '</div>';
     });
 
     return inputHtml;
 }
 
-//{"type": "radio", "libelle" : "Boutons radio", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
+function createCheckBoxHtml(element) {
+    let inputHtml = "";
+        
+    element.valeurs.forEach(value => {
+        inputHtml += 
+        '<div>'+
+            '<input type="checkbox" id="' + element.id + '_' + slugify(value) + '" name="' + element.id + '_' + slugify(value) + '">' +
+            '<label for="' + element.id + '_' + slugify(value) + '">' + value + '</label>' +
+        '</div>';
+    });
+
+    return inputHtml;
+}
+
+//    {"type": "checkbox", "libelle" : "Cases à cocher", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
 
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
@@ -71,10 +85,6 @@ export default function jsonToHtml(array) {
         switch (element.type) {
             case "champ_texte":
                 contentHtml += createInputTextHtml(element);
-                break;
-
-            case "bouton":
-                contentHtml += createButtonHtml(element);
                 break;
 
             case "zone_texte":
@@ -87,6 +97,14 @@ export default function jsonToHtml(array) {
 
             case "radio":
                 contentHtml += createRadioHtml(element);
+                break;
+
+            case "checkbox":
+                contentHtml += createCheckBoxHtml(element);
+                break;
+
+            case "bouton":
+                contentHtml += createButtonHtml(element);
                 break;
          
              default:
