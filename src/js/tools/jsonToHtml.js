@@ -76,8 +76,6 @@ function createCheckBoxHtml(element) {
     return inputHtml;
 }
 
-//    {"type": "checkbox", "libelle" : "Cases à cocher", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
-
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
 
