@@ -2,8 +2,6 @@ import React, {useState, useEffect}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
 import { connect } from "react-redux";
-import jsonToHtml from '../../tools/jsonToHtml.js';
-
 
 const Previsualisation = props => {
 
@@ -36,14 +34,12 @@ const Previsualisation = props => {
         setNumberModifications(numberModifications + 1);
     }
 
-    useEffect(() => {
-        console.log('test');
-    });
-
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} onClick={clickHandler}>
         <form>
             {props.formList.map((element) => {
-                return <Element key={element.id} type={element.type} id={element.id} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onMouseDown={clickHandler} selected={isSelected(element.id + "Wrapper")} />
+                return <div>
+                    <Element key={element.id} type={element.type} id={element.id} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onClick={clickHandler} selected={isSelected(element.id + "Wrapper")} />
+                </div>            
             })}
         </form>
     </div>

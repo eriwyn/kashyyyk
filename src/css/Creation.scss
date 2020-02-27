@@ -1,5 +1,9 @@
 @import "Variables";
 
+* {
+  box-sizing: border-box;
+}
+
 .onglet {
     border:1px solid $colorBleuClair;
     padding:0.5em 1em;
@@ -45,6 +49,7 @@
 
 .element {
   cursor: move;
+  display: inline-block;
 }
 
 .element * {
