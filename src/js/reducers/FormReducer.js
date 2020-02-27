@@ -1,7 +1,5 @@
 const initialState = {
     "elements": [
-        {"type": "champ_texte", "id": "test1", "libelle" : "Champ de texte", "texte": "Entrez du texte"},
-        {"type": "champ_texte", "id": "test2", "libelle" : "Champ de texte", "texte": "Entrez du texte"},
 
     ]
 };
