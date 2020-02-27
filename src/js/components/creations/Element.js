@@ -29,6 +29,13 @@ export default function Element(props) {
         </div>
     }
 
+    const TextAreaElement = () => {
+        return <div>
+            <label htmlFor={elementId}>{props.libelle}</label>
+            <textarea id={elementId} name={elementId} placeholder={props.texte} />
+        </div>
+    }
+
     let elementContent;
     let elementObject;
 
@@ -48,6 +55,16 @@ export default function Element(props) {
             elementObject = {
                 "type": props.type, 
                 "id": elementId,
+                "texte": props.texte
+            };
+            break;
+
+        case 'zone_texte':
+            elementContent =  <TextAreaElement />
+            elementObject = {
+                "type": props.type, 
+                "id": elementId,
+                "libelle": props.libelle,
                 "texte": props.texte
             };
             break;

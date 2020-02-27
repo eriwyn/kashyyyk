@@ -4,7 +4,7 @@ function createInputTextHtml(element) {
     let inputHtml = 
         '<div>' +
             '<label for="' + element.id + '">' + element.libelle + '</label>' +
-            '<input type="text" id="' + element.id + '" name="' + element.id + '">' +
+            '<input type="text" id="' + element.id + '" name="' + element.id + '" placeholder="' + element.texte + '">' +
         '</div>';
 
     return inputHtml;
@@ -19,6 +19,18 @@ function createButtonHtml(element) {
     return inputHtml;
 }
 
+function createTextAreaHtml(element) {
+    let inputHtml = 
+        '<div>' +
+            '<label for="' + element.id + '">' + element.libelle + '</label>' +
+            '<textarea id="' + element.id + '" name="' + element.id + '" placeholder="' + element.texte + '">' +
+        '</div>';
+
+    return inputHtml;
+}
+
+//     {"type": "zone_texte", "libelle" : "Zone de texte", "texte": "Entrez du texte"}
+
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
 
@@ -30,6 +42,10 @@ export default function jsonToHtml(array) {
 
             case "bouton":
                 contentHtml += createButtonHtml(element);
+                break;
+
+            case "zone_texte":
+                contentHtml += createTextAreaHtml(element);
                 break;
          
              default:

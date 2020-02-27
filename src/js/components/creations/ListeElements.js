@@ -15,5 +15,6 @@ export default function ListeElements() {
     return <ul className="listeElements" onClick={ clickHandler }>
         <li><Element type="champ_texte" libelle="Champ de texte" texte="Entrez du texte" onClick={clickHandler} selected={elementSelected} /></li>
         <li><Element type="bouton" texte="Bouton" onClick={clickHandler} selected={elementSelected} /></li>
+        <li><Element type="zone_texte" libelle="Zone de texte" texte="Entrez du texte" onClick={clickHandler} selected={elementSelected} /></li>
     </ul>
 }
