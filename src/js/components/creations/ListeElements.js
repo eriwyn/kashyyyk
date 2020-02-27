@@ -1,19 +1,11 @@
 import React, { useState }  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
+import uniqid from "uniqid";
 
 export default function ListeElements() {
 
     const [elementSelected, setElementSelected] = useState("");
-
-
-    function isSelected(elementId) {
-        if (elementId === elementSelected) {
-            return "selected";
-        }
-
-        return "";
-    }
 
 
     function clickHandler(event) {
@@ -21,7 +13,7 @@ export default function ListeElements() {
     }
 
     return <ul className="listeElements" onClick={ clickHandler }>
-        <li><Element type="champ_texte" id="textElement" libelle="Champ de texte" texte="Entrez du texte" onMouseDown={clickHandler} selected={isSelected("textElementWrapper")} /></li>
-        <li><Element type="bouton" id="buttonElement" texte="Bouton" onMouseDown={clickHandler} selected={isSelected("buttonElementWrapper")} /></li>
+        <li><Element type="champ_texte" libelle="Champ de texte" texte="Entrez du texte" onClick={clickHandler} selected={elementSelected} /></li>
+        <li><Element type="bouton" texte="Bouton" onClick={clickHandler} selected={elementSelected} /></li>
     </ul>
 }

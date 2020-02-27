@@ -1,11 +1,14 @@
 import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
+import uniqid from "uniqid";
 
 
 export default function Element(props) {
 
     const [selected, setSelected] = useState("");
     const [elementJson, setElementJson] = useState("");
+    const [elementId, setElementId] = useState(uniqid(props.type + "_"));
+
 
     function dragStartHandler(event) {
         event
@@ -15,14 +18,14 @@ export default function Element(props) {
 
     const TextElement = () => {
         return <div>
-            <label htmlFor={props.id}>{props.libelle}</label>
-            <input type="text" id={props.id} name={props.id} placeholder={props.texte} />
+            <label htmlFor={elementId}>{props.libelle}</label>
+            <input type="text" id={elementId} name={elementId} placeholder={props.texte} />
         </div>
     }
 
     const ButtonElement = () => {
         return <div>
-            <button id={props.id} name={props.id}>{props.texte}</button>
+            <button id={elementId} name={elementId}>{props.texte}</button>
         </div>
     }
 
@@ -34,7 +37,7 @@ export default function Element(props) {
             elementContent = <TextElement />
             elementObject = {
                 "type": props.type,
-                "id": props.id,
+                "id": elementId,
                 "libelle": props.libelle, 
                 "texte": props.texte
             };
@@ -44,7 +47,7 @@ export default function Element(props) {
             elementContent =  <ButtonElement />
             elementObject = {
                 "type": props.type, 
-                "id": props.id,
+                "id": elementId,
                 "texte": props.texte
             };
             break;
@@ -54,11 +57,20 @@ export default function Element(props) {
     }
 
     useEffect(() => {
-        setSelected(props.selected);
+        if (props.selected === elementId + "_Wrapper") {
+            setSelected("selected");
+        } else {
+            setSelected("");
+        }
+        
+        if (props.id) {
+            setElementId(props.id);
+        }
+
         setElementJson(JSON.stringify(elementObject));
     });
 
-    return <div id={props.id + "Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
+    return <div id={elementId + "_Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
         {elementContent}
     </div>   
 }
