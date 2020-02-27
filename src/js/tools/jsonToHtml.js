@@ -1,4 +1,5 @@
 import beautify_html  from 'html';
+import slugify from './slugify';
 
 function createInputTextHtml(element) {
     let inputHtml = 
@@ -29,7 +30,25 @@ function createTextAreaHtml(element) {
     return inputHtml;
 }
 
-//     {"type": "zone_texte", "libelle" : "Zone de texte", "texte": "Entrez du texte"}
+function createSelectHtml(element) {
+    let inputHtml = 
+        '<div>' +
+            '<label for="' + element.id + '">' + element.libelle + '</label>' +
+            '<select id="' + element.id + '" name="' + element.id + '">';
+            
+    element.valeurs.forEach(value => {
+        inputHtml += 
+            '<option value="' + slugify(value) + '">' + value + '</option>';
+    });
+     
+    inputHtml += 
+            '</select>' +
+        '</div>';
+
+    return inputHtml;
+}
+
+//{"type": "select", "libelle" : "Menu déroulant", "valeurs": ["Choix 1", "Choix 2", "Choix 3"]}
 
 export default function jsonToHtml(array) {
     let contentHtml = '<form>';
@@ -46,6 +65,10 @@ export default function jsonToHtml(array) {
 
             case "zone_texte":
                 contentHtml += createTextAreaHtml(element);
+                break;
+
+            case "select":
+                contentHtml += createSelectHtml(element);
                 break;
          
              default:

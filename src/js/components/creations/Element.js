@@ -1,6 +1,7 @@
 import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
 import uniqid from "uniqid";
+import slugify from '../../tools/slugify.js'
 
 
 export default function Element(props) {
@@ -36,6 +37,17 @@ export default function Element(props) {
         </div>
     }
 
+    const SelectElement = () => {
+        return <div>
+            <label htmlFor={elementId}>{props.libelle}</label>
+            <select id={elementId} name={elementId}>
+                {props.valeurs.map((valeur, index) => {
+                    return <option key={index} value={slugify(valeur)}>{valeur}</option>
+                })}
+            </select>
+        </div>
+    }
+
     let elementContent;
     let elementObject;
 
@@ -66,6 +78,16 @@ export default function Element(props) {
                 "id": elementId,
                 "libelle": props.libelle,
                 "texte": props.texte
+            };
+            break;
+
+        case 'select':
+            elementContent =  <SelectElement />
+            elementObject = {
+                "type": props.type, 
+                "id": elementId,
+                "libelle": props.libelle,
+                "valeurs": props.valeurs
             };
             break;
     
