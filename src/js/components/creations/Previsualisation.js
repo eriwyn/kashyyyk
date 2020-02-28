@@ -1,13 +1,18 @@
-import React, {useState}  from 'react';
+import React, {useState, useEffect}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
-import PrevisualisationCode from './PrevisualisationCode.js';
-import PrevisualisationElements from './PrevisualisationElements.js';
 import { connect } from "react-redux";
+import uniqid from "uniqid";
 
 
 const Previsualisation = props => {
-    const [arrayForm, setForm]=useState([]);
+
+    const [numberModifications, setNumberModifications] = useState(0);
+    const [elementSelected, setElementSelected] = useState("");
+
+    function clickHandler(event) {
+        setElementSelected(event.target.id);
+    }
 
     function dragOverHandler(event) {
         event.preventDefault();
@@ -15,34 +20,28 @@ const Previsualisation = props => {
 
     function dropHandler(event) {
         event.preventDefault();
-        const id = event
+        const elementJson = event
           .dataTransfer
           .getData('text');
 
-        switch (id) {
-            case 'button':
-                const button = {"genre": "input", "libelle": "button", "type": "button"}
-                setForm(arrayForm.concat(button))
-                break;
-        
-            default:
-                break;
-        }
+        props.addElement(elementJson)
+        setNumberModifications(numberModifications + 1);
     }
 
-
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
-        {/* <PrevisualisationCode table={arrayForm} /> */}
-        {props.formList.map(element => {
-            return <p></p>
-      })}
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} onClick={clickHandler}>
+        <form>
+            {props.formList.map((element, index) => {
+                return <div key={index}>
+                    <Element type={element.type} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onClick={clickHandler} selected={elementSelected} />
+                </div>            
+            })}
+        </form>
     </div>
 }
 
 // définition des données à récupérer dans le store
 const mapStateToProps = reduxState => {
     return {
-        // on accédera à ces donnnées dans le composant via : props.userList
         formList: reduxState.formReducer.elements
     };
 };
@@ -50,9 +49,11 @@ const mapStateToProps = reduxState => {
 // définition des actions dispatchables
 const mapDispatchToProps = dispatch => {
     return {
-        // on utilisera cette fonction dans le composant via : props.addUser
         addElement: element => {
             dispatch({ type: "ADD_ELEMENT", data: { element } });
+        },
+        removeElement: element => {
+            dispatch({ type: "REMOVE_ELEMENT", data: { element } });
         }
     };
 };
