@@ -7,7 +7,11 @@ const initialState = {
 const ConnexionReducer=function(currentState = initialState, action){
     switch(action.type){
         case "ADD_ELEMENT":
-            currentState.elements.push(JSON.parse(action.data.element))
+            if (action.data.position) {
+                currentState.elements.splice(action.data.position, 0, JSON.parse(action.data.element));
+            } else {
+                currentState.elements.push(JSON.parse(action.data.element))
+            }
             return currentState;
             break;
         case "REMOVE_ELEMENT":

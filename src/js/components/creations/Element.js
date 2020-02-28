@@ -51,8 +51,8 @@ export default function Element(props) {
     const RadioElement = () => {
         return <div>
             {props.valeurs.map((valeur, index) => {
-                return <div>
-                    <input key={index} type="radio" id={elementId + '_' + slugify(valeur)} name={elementId} value={slugify(valeur)} />
+                return <div key={index}>
+                    <input type="radio" id={elementId + '_' + slugify(valeur)} name={elementId} value={slugify(valeur)} />
                     <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
                 </div>
             })}
@@ -62,8 +62,8 @@ export default function Element(props) {
     const CheckBoxElement = () => {
         return <div>
             {props.valeurs.map((valeur, index) => {
-                return <div>
-                    <input key={index} type="checkbox" id={elementId + '_' + slugify(valeur)} name={elementId + '_' + slugify(valeur)} />
+                return <div key={index}>
+                    <input type="checkbox" id={elementId + '_' + slugify(valeur)} name={elementId + '_' + slugify(valeur)} />
                     <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
                 </div>
             })}
@@ -149,7 +149,7 @@ export default function Element(props) {
         setElementJson(JSON.stringify(elementObject));
     });
 
-    return <div id={elementId + "_Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
+    return <div id={elementId + "_wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
         {elementContent}
     </div>   
 }

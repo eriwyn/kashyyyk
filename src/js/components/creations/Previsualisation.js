@@ -24,15 +24,24 @@ const Previsualisation = props => {
           .dataTransfer
           .getData('text');
 
-        props.addElement(elementJson)
+        if (event.target.id) {
+            let elementPosition = event.target.id.replace('element_', '');
+            elementPosition = elementPosition.replace('component_', '');
+            elementPosition = elementPosition.replace('_wrapper', '');
+
+            props.addElement(elementJson, elementPosition);
+        } else {
+            props.addElement(elementJson)
+        }
+
         setNumberModifications(numberModifications + 1);
     }
 
     return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} onClick={clickHandler}>
         <form>
             {props.formList.map((element, index) => {
-                return <div key={index}>
-                    <Element type={element.type} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onClick={clickHandler} selected={elementSelected} />
+                return <div key={index} id={"element_" + index}>
+                    <Element type={element.type} id={"element_component_" + index} libelle={element.libelle} texte={element.texte} valeurs={element.valeurs} onClick={clickHandler} selected={elementSelected} />
                 </div>            
             })}
         </form>
@@ -49,8 +58,8 @@ const mapStateToProps = reduxState => {
 // définition des actions dispatchables
 const mapDispatchToProps = dispatch => {
     return {
-        addElement: element => {
-            dispatch({ type: "ADD_ELEMENT", data: { element } });
+        addElement: (element, position) => {
+            dispatch({ type: "ADD_ELEMENT", data: { element, position } });
         },
         removeElement: element => {
             dispatch({ type: "REMOVE_ELEMENT", data: { element } });
