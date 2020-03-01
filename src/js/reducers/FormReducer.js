@@ -18,10 +18,8 @@ const FormReducer=function(currentState = initialState, action){
             return currentState;
             break;
         case "REMOVE_ELEMENT":
-            console.log('bonsoir');
             action.data.element = JSON.parse(action.data.element);
             const index = action.data.element.id.replace('element_component_', '');
-            console.log(index)
             if (index > -1) {
                 currentState.elements.splice(index, 1);
             }

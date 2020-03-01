@@ -23,8 +23,6 @@ const Previsualisation = props => {
           .dataTransfer
           .getData('text');
 
-        // console.log(elementJson)
-
         let elementArray = JSON.parse(elementJson);
 
         if (elementArray["id"].includes("element_component")) {

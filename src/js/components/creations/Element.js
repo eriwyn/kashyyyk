@@ -1,6 +1,5 @@
 import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
-import uniqid from "uniqid";
 import slugify from '../../tools/slugify.js'
 
 
@@ -8,7 +7,6 @@ export default function Element(props) {
 
     const [selected, setSelected] = useState("");
     const [elementJson, setElementJson] = useState("");
-    // const [elementId, setElementId] = useState(uniqid(props.type + "_"));
     const [elementId, setElementId] = useState(props.id);
 
 
@@ -138,7 +136,7 @@ export default function Element(props) {
     }
 
     useEffect(() => {
-        if (props.selected === elementId + "_Wrapper") {
+        if (props.selected === elementId + "_wrapper") {
             setSelected("selected");
         } else {
             setSelected("");
