@@ -1,7 +1,6 @@
 import React, { useState }  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
-import uniqid from "uniqid";
 
 export default function ListeElements() {
 
