@@ -17,11 +17,11 @@ const FormReducer=function(currentState = initialState, action){
             }
             break;
         case "REMOVE_ELEMENT":
-            action.data.element = JSON.parse(action.data.element);
-            const index = action.data.element.id.replace('element_component_', '');
-            if (index > -1) {
-                currentState.elements.splice(index, 1);
-            }
+            // action.data.element = JSON.parse(action.data.element);
+            // const index = action.data.element.id.replace('element_component_', '');
+            // if (index > -1) {
+                currentState.elements.splice(action.data.position, 1);
+            // }
 
             break;
         case "UPDATE_ELEMENT":

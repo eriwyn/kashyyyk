@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react';
+import React, {useState}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
 import { connect } from "react-redux";
@@ -30,10 +30,6 @@ const Previsualisation = props => {
 
         let elementArray = JSON.parse(elementJson);
 
-        if (elementArray["id"].includes("element_component")) {
-            props.removeElement(elementJson);
-        }
-
         if (event.target.id) {
             let elementPosition = event.target.id.replace('element_', '');
             elementPosition = elementPosition.replace('component_', '');
@@ -42,6 +38,10 @@ const Previsualisation = props => {
             props.addElement(elementJson, elementPosition);
         } else {
             props.addElement(elementJson)
+        }
+
+        if (elementArray["id"].includes("element_component")) {
+            props.removeElement(elementJson);
         }
 
         setNumberModifications(numberModifications + 1);
