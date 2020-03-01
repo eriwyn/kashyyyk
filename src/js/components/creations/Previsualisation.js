@@ -11,6 +11,11 @@ const Previsualisation = props => {
 
     function clickHandler(event) {
         setElementSelected(event.target.id);
+        let position = event.target.id.replace("element_component_", "")
+        position = position.replace("_wrapper", "");
+
+        props.selectElement(position);
+
     }
 
     function dragOverHandler(event) {
@@ -42,7 +47,7 @@ const Previsualisation = props => {
         setNumberModifications(numberModifications + 1);
     }
 
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler} onClick={clickHandler}>
+    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
         <form>
             {props.formList.map((element, index) => {
                 return <div key={index} id={"element_" + index}>
@@ -68,7 +73,13 @@ const mapDispatchToProps = dispatch => {
         },
         removeElement: element => {
             dispatch({ type: "REMOVE_ELEMENT", data: { element } });
-        }
+        },
+        updateElement: (position, attribute, value) => {
+            dispatch({ type: "UPDATE_ELEMENT", data: { position, attribute, value } });
+        },
+        selectElement: position => {
+            dispatch({ type: "SELECT_ELEMENT", data: { position } });
+        },
     };
 };
   
