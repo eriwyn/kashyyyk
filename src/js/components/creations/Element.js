@@ -8,7 +8,9 @@ export default function Element(props) {
 
     const [selected, setSelected] = useState("");
     const [elementJson, setElementJson] = useState("");
-    const [elementId, setElementId] = useState(uniqid(props.type + "_"));
+    // const [elementId, setElementId] = useState(uniqid(props.type + "_"));
+    const [elementId, setElementId] = useState(props.id);
+
 
 
     function dragStartHandler(event) {

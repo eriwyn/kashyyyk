@@ -4,20 +4,26 @@ const initialState = {
     ]
 };
   
-const ConnexionReducer=function(currentState = initialState, action){
+const FormReducer=function(currentState = initialState, action){
     switch(action.type){
         case "ADD_ELEMENT":
+            action.data.element = JSON.parse(action.data.element);
             if (action.data.position) {
-                currentState.elements.splice(action.data.position, 0, JSON.parse(action.data.element));
+                action.data.element.id = "element_" + action.data.position;
+                currentState.elements.splice(action.data.position, 0, action.data.element);
             } else {
-                currentState.elements.push(JSON.parse(action.data.element))
+                action.data.element.id = "element_" + currentState.elements.length;
+                currentState.elements.push(action.data.element)
             }
             return currentState;
             break;
         case "REMOVE_ELEMENT":
-            const index = currentState.indexOf(action.data.element);
+            console.log('bonsoir');
+            action.data.element = JSON.parse(action.data.element);
+            const index = action.data.element.id.replace('element_component_', '');
+            console.log(index)
             if (index > -1) {
-                currentState.splice(index, 1);
+                currentState.elements.splice(index, 1);
             }
 
             return currentState;
@@ -27,4 +33,4 @@ const ConnexionReducer=function(currentState = initialState, action){
     }
 }
 
-export default ConnexionReducer;
+export default FormReducer;
