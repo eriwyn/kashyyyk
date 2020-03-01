@@ -2,7 +2,6 @@ import React, {useState, useEffect}  from 'react';
 import '../../../css/Creation.scss';
 import Element from './Element.js';
 import { connect } from "react-redux";
-import uniqid from "uniqid";
 
 
 const Previsualisation = props => {
