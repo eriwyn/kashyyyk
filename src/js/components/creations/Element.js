@@ -1,6 +1,5 @@
 import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
-import uniqid from "uniqid";
 import slugify from '../../tools/slugify.js'
 
 
@@ -8,7 +7,8 @@ export default function Element(props) {
 
     const [selected, setSelected] = useState("");
     const [elementJson, setElementJson] = useState("");
-    const [elementId, setElementId] = useState(uniqid(props.type + "_"));
+    const [elementId, setElementId] = useState(props.id);
+
 
 
     function dragStartHandler(event) {
@@ -51,8 +51,8 @@ export default function Element(props) {
     const RadioElement = () => {
         return <div>
             {props.valeurs.map((valeur, index) => {
-                return <div>
-                    <input key={index} type="radio" id={elementId + '_' + slugify(valeur)} name={elementId} value={slugify(valeur)} />
+                return <div key={index}>
+                    <input type="radio" id={elementId + '_' + slugify(valeur)} name={elementId} value={slugify(valeur)} />
                     <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
                 </div>
             })}
@@ -62,8 +62,8 @@ export default function Element(props) {
     const CheckBoxElement = () => {
         return <div>
             {props.valeurs.map((valeur, index) => {
-                return <div>
-                    <input key={index} type="checkbox" id={elementId + '_' + slugify(valeur)} name={elementId + '_' + slugify(valeur)} />
+                return <div key={index}>
+                    <input type="checkbox" id={elementId + '_' + slugify(valeur)} name={elementId + '_' + slugify(valeur)} />
                     <label htmlFor={elementId + '_' + slugify(valeur)}>{valeur}</label>
                 </div>
             })}
@@ -136,7 +136,7 @@ export default function Element(props) {
     }
 
     useEffect(() => {
-        if (props.selected === elementId + "_Wrapper") {
+        if (props.selected === elementId + "_wrapper") {
             setSelected("selected");
         } else {
             setSelected("");
@@ -149,7 +149,7 @@ export default function Element(props) {
         setElementJson(JSON.stringify(elementObject));
     });
 
-    return <div id={elementId + "_Wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
+    return <div id={elementId + "_wrapper"} className={"element " + selected} draggable='true' onDragStart={dragStartHandler} onClick={props.onClick}>
         {elementContent}
     </div>   
 }
