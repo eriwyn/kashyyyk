@@ -21,6 +21,22 @@ const BoiteAOutils = props => {
         </div>
     }
 
+    const TextAreaTools = () => {
+        let position = elementSelected.id.replace("element_", "");
+        console.log(position);
+        return <div className="boiteAOutils">
+            <div>
+                <label htmlFor="libelleTool">Libellé</label>
+                <input type="text" id="libelleTool" name="libelleTool" defaultValue={elementSelected.libelle}  onChange={(event) => {props.updateElement(position, "libelle", event.target.value)}} />
+            </div>
+            <div>
+                <label htmlFor="texteTool">Texte</label>
+                <input type="text" id="texteTool" name="texteTool" defaultValue={elementSelected.texte} onChange={(event) => {props.updateElement(position, "texte", event.target.value)}} />
+            </div>
+            <button onClick={() => {props.removeElement(position)}}>Supprimer l'élément</button>
+        </div>
+    }
+
     useState(() => {
         props.formList.forEach(element => {
             if (element["selected"]) {
@@ -34,6 +50,9 @@ const BoiteAOutils = props => {
     switch (elementSelected.type) {
         case 'champ_texte':
             return <InputTextTools />
+        
+        case 'zone_texte':
+            return <TextAreaTools />
     
         default:
             break;
