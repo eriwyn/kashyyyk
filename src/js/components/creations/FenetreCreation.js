@@ -8,8 +8,10 @@ import ListeElements from './ListeElements';
 export default function FenetreCreation(props) {
 
     return <div className="fenetreCreation">
-        <BoiteAOutils />
-        <Previsualisation />
+        <div>
+            <BoiteAOutils />
+            <Previsualisation />
+        </div>
         <ListeElements />
     </div>
 }

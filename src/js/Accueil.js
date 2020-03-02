@@ -9,7 +9,7 @@ export default function Accueil (){
       <div className="flexImageMenu">
         <article className="textCoteImageMenu">
           <p className="paragraphePresentationAccueil">Créez vos formulaires et tableaux</p>
-          <p className="paragraphePresentationAccueil">Exportez vos propres données</p>
+          <p className="paragraphePresentationAccueil">Exportez le code HTML de vos créations</p>
           <p className="paragraphePresentationAccueil">Une prise en main rapide et gratuite</p>
         </article>
         <img src="dessin.jpg" alt="développement web"/>
