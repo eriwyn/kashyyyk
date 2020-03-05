@@ -13,14 +13,14 @@ const initialState = {
     ]
 };
 
-const FormReducer=function(currentState = initialState, action){
+const TableReducer=function(currentState = initialState, action){
     switch(action.type){
         case "ADD_LINE":
             currentState.lines ++;
             currentState.lines.push([]);
             break;
         case "ADD_COLUMN":
-            currentState.colums ++;
+            currentState.columns ++;
             break;
         case "REMOVE_LINE":
             currentState.lines --;
@@ -90,4 +90,4 @@ const FormReducer=function(currentState = initialState, action){
 
 }
 
-export default FormReducer;
+export default TableReducer;

@@ -4,7 +4,7 @@ import Element from './Element.js';
 import { connect } from "react-redux";
 
 
-const Previsualisation = props => {
+const PrevisualisationForm = props => {
 
     const [numberModifications, setNumberModifications] = useState(0);
     const [elementSelected, setElementSelected] = useState("");
@@ -86,4 +86,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Previsualisation);
+)(PrevisualisationForm);
