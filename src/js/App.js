@@ -10,6 +10,7 @@ import Accueil from './Accueil.js';
 import MentionsLegales from './MentionsLegales.js';
 import APropos from './APropos.js';
 import Formulaire from './Formulaire.js';
+import Tableau from './Tableau.js';
 import MesCreations from './components/MesCreations';
 
 
@@ -26,6 +27,7 @@ export default function App(){
               <Route exact path="/MentionsLegales" component={MentionsLegales}/>
               <Route exact path="/APropos" component={APropos}/>
               <Route exact path="/formulaire" component={Formulaire}/>
+              <Route exact path="/tableau" component={Tableau}/>
               <Route exact path="/mesCreations" component={MesCreations}/>
             </Switch>
           <Footer/>
