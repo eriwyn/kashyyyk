@@ -1,7 +1,9 @@
 import React  from 'react';
 import '../../../css/Creation.scss';
-import BoiteAOutils from './BoiteAOutils.js';
+import BoiteAOutilsForm from './BoiteAOutilsForm.js';
+import BoiteAOutilsTable from './BoiteAOutilsTable.js';
 import PrevisualisationForm from './PrevisualisationForm';
+import PrevisualisationTable from './PrevisualisationTable';
 import ListeElements from './ListeElements';
 
 
@@ -10,8 +12,8 @@ export default function FenetreCreation(props) {
     const CreationFormulaire = () => {
         return <div className="fenetreCreation">
             <div>
-                <BoiteAOutils type="formulaire" />
-                <PrevisualisationForm type="formulaire" />
+                <BoiteAOutilsForm />
+                <PrevisualisationForm />
             </div>
             <ListeElements type="formulaire" />
         </div>
@@ -20,8 +22,8 @@ export default function FenetreCreation(props) {
     const CreationTableau = () => {
         return <div className="fenetreCreation">
             <div>
-                <BoiteAOutils type="tableau" />
-                <PrevisualisationForm type="tableau" />
+                <BoiteAOutilsTable />
+                <PrevisualisationTable type="tableau" />
             </div>
         </div>
     }

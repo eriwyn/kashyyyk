@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from 'react';
 import '../../../css/Creation.scss';
 import { connect } from "react-redux";
 
-const BoiteAOutils = props => {
+const BoiteAOutilsTable = props => {
     const [elementSelected, setElementSelected] = useState("");
 
     const InputTextTools = () => {
@@ -95,4 +95,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(BoiteAOutils);
+)(BoiteAOutilsTable);

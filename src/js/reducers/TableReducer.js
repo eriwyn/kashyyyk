@@ -1,42 +1,40 @@
 const initialState = {
-    "lines": 4,
+    "rows": 4,
     "columns": 3,
-    "head": true,
-    "foot": false,
-    "lines":[
-        ["blabla","blabla2","blabla3"],
+    "head": ["blabla","blabla2","blabla3"],
+    "foot": ["tableau","formulaire","pateBolo"],
+    "body":[
         ["truc","bidule","machin"],
         ["truc","bidule","machin"],
         ["truc","bidule","machin"],
-        ["truc","bidule","machin"],
-        ["tableau","formulaire","pateBolo"]
+        ["truc","bidule","machin"]
     ]
 };
 
 const TableReducer=function(currentState = initialState, action){
     switch(action.type){
         case "ADD_LINE":
-            currentState.lines ++;
-            currentState.lines.push([]);
+            currentState.rows ++;
+            currentState.body.push([]);
             break;
         case "ADD_COLUMN":
             currentState.columns ++;
             break;
         case "REMOVE_LINE":
-            currentState.lines --;
-            currentState.lines.splice(action.data.position, 1);
+            currentState.rows --;
+            currentState.body.splice(action.data.position, 1);
             break;
         case "REMOVE_COLUMN":
             currentState.columns --;
-            currentState.lines.forEach(line => {
+            currentState.body.forEach(line => {
                 line.splice(action.data.position, 1)
             });
             break;
         case "ADD_HEAD":
-            currentState.head = true;
+            currentState.head = [];
             break;
         case "ADD_FOOT":
-            currentState.foot = true;
+            currentState.foot = [];
             break;
         case "REMOVE_HEAD":
             currentState.head = false;
@@ -45,7 +43,7 @@ const TableReducer=function(currentState = initialState, action){
             currentState.foot = false;
             break;
         case "UPDATE_FIELD":
-            currentState.lines[action.data.lines][action.data.columns] = action.data.value;
+            currentState.body[action.data.rows][action.data.columns] = action.data.value;
             break;
 
 
