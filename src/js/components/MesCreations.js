@@ -9,10 +9,12 @@ import "./../../css/MesCreations.scss"
 export default function MesCreations(props){
     const [creation, setCreation]=useState([]);
     const [show,setShow]=useState(false);
-    const [created_at,setCreated_at]=useState([])
+    const [idToDelete,setIdToDelete]=useState('');
+    const [created_at,setCreated_at]=useState([]);
     const id=1;
     const showModal=(e)=>{
-        setShow(!show)
+        setShow(!show);
+        setIdToDelete(e.target.key);
     }
     useEffect(() => { axios.get("https://kashyyyk.stark.mmi-unistra.fr/mescreations").then(response => {
           setCreation(response.data) 
@@ -56,8 +58,8 @@ export default function MesCreations(props){
                             <td>{creation.name}</td>
                             <td>{date}</td>
                             <td>{creation.updated_at}</td>
-                            <td ><Link to={"/"+creation.type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
-                            <td ><a href="#" onClick={e=>showModal(e)} className="iconeRed"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></a></td>
+                            <td ><Link to={"/"+type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
+                            <td ><span onClick={e=>showModal(e)} className="iconeRed"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></span></td>
                         </tr>
                     )
 

@@ -16,7 +16,7 @@ export default function Accueil (){
       </div>
       <div className="divButton">
           <GhostButton lien="/formulaire" text="Créer un formulaire"/>
-          <GhostButton lien="#" text="Créer un tableau"/>
+          <GhostButton lien="/tableau" text="Créer un tableau"/>
       </div>
       <div className="divCompteAccueil">
         <h2 className="h2AccueilCompte">Vous voulez sauvegarder votre travail ?</h2>
