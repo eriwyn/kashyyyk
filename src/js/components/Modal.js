@@ -1,4 +1,5 @@
-import React from "react";
+import React ,{useState, useEffect}from "react";
+import axios from 'axios';
 import "./../../css/Modal.scss";
 import PropTypes from "prop-types";
 
@@ -7,7 +8,9 @@ export default class Modal extends React.Component {
     this.props.onClose && this.props.onClose(e);
   };
   suppr=e=>{
-    //rajouter le code axios delete pour venir supprimer l'enregistrement sur lequel on a cliqué
+    // axios.delete("https://kashyyyk.stark.mmi-unistra.fr/mescreations",).then(response => {  
+
+    // })  
   }
    
   render() {
@@ -19,7 +22,7 @@ export default class Modal extends React.Component {
         <h2>Attention la suppression est définitive :O</h2>
         <div className="content">{this.props.children}</div>
         <div className="actions">
-          <button className="btnSuppresssion" onClick={this.suppr}>Supprimer </button>
+          <button className="btnSuppression" onClick={this.suppr}>Supprimer </button>
           <button className="toggle-button" onClick={this.onClose}>
             Annuler
           </button>

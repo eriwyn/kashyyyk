@@ -1,4 +1,6 @@
 
+@import "Variables";
+
 .modal {
   width: 500px;
   background: white;
@@ -9,6 +11,11 @@
   transform: scale(1);
   opacity: 1;
   visibility: visible;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+
 }
 .modal.off {
   opacity: 0;
@@ -18,7 +25,7 @@
   box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2);
 }
 @supports (offset-rotation: 0deg) {
- // offset-rotation: 0deg;
+  //offset-rotation: 0deg;
   //offset-path: path("M 250,100 S -300,500 -700,-200");
   .modal.off {
     offset-distance: 100%;
@@ -42,9 +49,9 @@
   background: #eee;
   padding: 0.5rem 1rem;
 }
-.modal .actions button {
+.modal .actions .toggle-button {
   border: 0;
-  background: #78f89f;
+  background: grey;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
@@ -54,11 +61,13 @@
   position: absolute;
 }
 
-.btnSuppression{
-  padding:6px 0 6px 0;
-	font:Bold 13px Arial;
-	background:#d34836;
-	color:#fff;
-	border-radius:2px;
-	border:none;
+.modal .actions .btnSuppression{
+  border: 0;
+  color:$colorClaire;
+  background: red;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  margin-right:5px;
 }

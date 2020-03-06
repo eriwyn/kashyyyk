@@ -4,28 +4,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 import Modal from './Modal';
+import "./../../css/MesCreations.scss"
 
 export default function MesCreations(props){
-
-    const [creation, setCreation]=useState('');
+    const [creation, setCreation]=useState([]);
     const [show,setShow]=useState(false);
-
+    const [created_at,setCreated_at]=useState([])
+    const id=1;
     const showModal=(e)=>{
         setShow(!show)
     }
-//manque l'adresse de la bdd pour pouvoir récupérer les différents enregistrements
-//     useEffect(() => { axios.get()).then(response => {
-//          setCreation(response.data.creations)          
-//      });
-//    }, []);
+    useEffect(() => { axios.get("https://kashyyyk.stark.mmi-unistra.fr/mescreations").then(response => {
+          setCreation(response.data) 
+          console.log(response) 
+          console.log(created_at)      
+      });
+    }, []);
 
-    return <main>
+    return <main className="main">
         <h1>Mes créations</h1>
         <table>
             <caption>Mes différents projets :</caption>
             <thead>
                 <tr>
                     <th>Type de création</th>
+                    <th>Nom du projet</th>
                     <th>Créé le: </th>
                     <th>Dernière modification</th>
                     <th>Modification</th>
@@ -34,14 +37,27 @@ export default function MesCreations(props){
             </thead>
             <tbody>
                 {creation.map(function(creation){
+                    console.log(creation.id)
+                    const date=new Date(creation.created_at).toLocaleString();
+                    var type;
+                    if(creation.type=="1"){
+                         type="formulaire";
+                    }
+                    else if(creation.type==2){
+                         type="tableau";
+                    }
+                    if(creation.updated_at==undefined){//cas où le projet n'a pas été modifié
+                        creation.updated_at=date;
+                    }
                     const id=creation.id;
                     return (
                         <tr key={id}>
-                            <td>{creation.type}</td>
-                            <td>{creation.createdAt}</td>
-                            <td>{creation.updatedAt}</td>
-                            <td><Link to={"/"+creation.type } params={{"id":creation.id}}><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
-                            <td><button onClick={e=>showModal(e)}><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button></td>
+                            <td>{type}</td>
+                            <td>{creation.name}</td>
+                            <td>{date}</td>
+                            <td>{creation.updated_at}</td>
+                            <td ><Link to={"/"+creation.type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
+                            <td ><a href="#" onClick={e=>showModal(e)} className="iconeRed"><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></a></td>
                         </tr>
                     )
 

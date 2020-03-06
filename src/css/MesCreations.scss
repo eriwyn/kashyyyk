@@ -1,0 +1,34 @@
+@import "Variables";
+
+table{
+    color:$colorClaire;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+ td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+ tbody {
+  border-top: 2px solid #eceeef;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color:$colorHeaderFooter;
+}
+
+.main{
+    height:100%;
+}
+
+.iconeRed{
+    color:red;
+}
+
+.iconeWhite{
+    color:$colorClaire;
+}
