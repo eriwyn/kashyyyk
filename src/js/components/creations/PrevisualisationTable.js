@@ -68,17 +68,8 @@ const mapStateToProps = reduxState => {
 // définition des actions dispatchables
 const mapDispatchToProps = dispatch => {
     return {
-        addElement: (element, position) => {
-            dispatch({ type: "ADD_ELEMENT", data: { element, position } });
-        },
-        removeElement: element => {
-            dispatch({ type: "REMOVE_ELEMENT", data: { element } });
-        },
-        updateElement: (position, attribute, value) => {
-            dispatch({ type: "UPDATE_ELEMENT", data: { position, attribute, value } });
-        },
-        selectElement: position => {
-            dispatch({ type: "SELECT_ELEMENT", data: { position } });
+        addLine: () => {
+            dispatch({ type: "ADD_ELEMENT", data: {} });
         },
     };
 };

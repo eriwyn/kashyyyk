@@ -16,9 +16,19 @@ const TableReducer=function(currentState = initialState, action){
         case "ADD_LINE":
             currentState.rows ++;
             currentState.body.push([]);
+            for (let i = 0; i < currentState.columns; i++) {
+                let length = currentState.body.length;
+                console.log(currentState.body);
+                currentState.body[currentState.body.length - 1].push("");
+            }
             break;
         case "ADD_COLUMN":
             currentState.columns ++;
+            currentState.body.forEach(line => {
+                line.push("");
+            });
+            currentState.head.push("");
+            currentState.foot.push("");
             break;
         case "REMOVE_LINE":
             currentState.rows --;
