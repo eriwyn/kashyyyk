@@ -35,7 +35,7 @@ function Header(props){
         <ul>
           <li><NavLink to="/Accueil"  activeClassName='active'>Accueil</NavLink></li>
           <li><NavLink to="/formulaire"  activeClassName="active">Création formulaire</NavLink></li>
-          <li><a href="#">Création tableau</a></li>
+          <li><NavLink to="/tableau" activeClassName="active">Création tableau</NavLink></li>
           <li><NavLink to="/mesCreations"  activeClassName="active">Mes créations</NavLink></li>
           <li><ConnexionButton /></li>
         </ul>
