@@ -14,10 +14,6 @@ import Tableau from './Tableau.js';
 import MesCreations from './components/MesCreations';
 
 
-
-
-
-
 export default function App(){
   return <div>
           <Header/>
