@@ -2,6 +2,8 @@ import React from "react";
 import axios from 'axios';
 import "./../../css/Modal.scss";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 export default class Modal extends React.Component {
   onClose = e => {
@@ -11,7 +13,7 @@ export default class Modal extends React.Component {
     var id=this.props.idDelete;
     console.log("id="+id)
     var deleted=1;
-    axios.put("https://kashyyyk.stark.mmi-unistra.fr",[id,1]).then(() => {  
+    axios.delete("https://kashyyyk.stark.mmi-unistra.fr",id).then(() => {  
       this.props.onClose && this.props.onClose(e);
     })  
   }
@@ -22,7 +24,7 @@ export default class Modal extends React.Component {
     }
     return (
       <div className="modal" id="modal">
-        <h2>Attention la suppression est définitive :0</h2>
+        <h2><FontAwesomeIcon  icon={faExclamationTriangle}></FontAwesomeIcon> Attention la suppression est définitive </h2>
         <div className="content">{this.props.children}</div>
         <div className="actions">
           <button className="btnSuppression" onClick={this.suppr}>Supprimer</button>
