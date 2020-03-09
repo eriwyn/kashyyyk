@@ -8,8 +8,10 @@ export default class Modal extends React.Component {
     this.props.onClose && this.props.onClose(e);
   };
   suppr=e=>{
-    var id=this.props.idToDelete;
-    axios.delete("https://kashyyyk.stark.mmi-unistra.fr",id).then(() => {  
+    var id=this.props.idDelete;
+    console.log("id="+id)
+    var deleted=1;
+    axios.put("https://kashyyyk.stark.mmi-unistra.fr",[id,1]).then(() => {  
       this.props.onClose && this.props.onClose(e);
     })  
   }
@@ -23,7 +25,7 @@ export default class Modal extends React.Component {
         <h2>Attention la suppression est définitive :0</h2>
         <div className="content">{this.props.children}</div>
         <div className="actions">
-          <button className="btnSuppression" onClick={this.suppr}>Supprimer </button>
+          <button className="btnSuppression" onClick={this.suppr}>Supprimer</button>
           <button className="toggle-button" onClick={this.onClose}>
             Annuler
           </button>

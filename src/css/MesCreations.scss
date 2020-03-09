@@ -21,9 +21,6 @@ tbody tr:nth-of-type(odd) {
     background-color:$colorHeaderFooter;
 }
 
-.main{
-    height:100%;
-}
 
 .iconeRed{
     color:red;
@@ -32,4 +29,43 @@ tbody tr:nth-of-type(odd) {
 
 .iconeWhite{
     color:$colorClaire;
+}
+
+.modal{
+    opacity:1;
+}
+@media (min-width: 768px){
+    .main{
+        height:100%;
+    }
+}
+
+@media (max-width: 768px){
+    thead {
+        display: none;
+    }
+    tr{
+        display: block;
+        margin-bottom: 40px;
+    }
+    td {
+        display: block;
+        text-align: right;
+    }
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    html{
+        height:100%;
+      }
+      body{
+        height: 100%;
+      }
+       body>div, body>div>div {
+        height:100%;
+      
+    }
+
 }
