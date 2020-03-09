@@ -1,0 +1,17 @@
+@import 'Variables';
+
+.articles{
+    display:block;
+}
+
+.article h3, .article h2{
+    color:$colorBleuClair;
+}
+
+.article p{
+    color:$colorClaire;
+}
+
+.article{
+    border-bottom:3px solid $colorHeaderFooter;
+}

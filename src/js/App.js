@@ -12,7 +12,7 @@ import APropos from './APropos.js';
 import Formulaire from './Formulaire.js';
 import Tableau from './Tableau.js';
 import MesCreations from './components/MesCreations';
-
+import Faq from './components/Faq';
 
 export default function App(){
   return <div>
@@ -22,6 +22,7 @@ export default function App(){
               <Route exact path="/Accueil" component={Accueil}/>
               <Route exact path="/MentionsLegales" component={MentionsLegales}/>
               <Route exact path="/APropos" component={APropos}/>
+              <Route exact path="/faq" component={Faq}/>
               <Route exact path="/formulaire" component={Formulaire}/>
               <Route exact path="/tableau" component={Tableau}/>
               <Route exact path="/mesCreations" component={MesCreations}/>

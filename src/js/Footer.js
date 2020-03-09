@@ -13,6 +13,7 @@ export default function Footer() {
             <ul>
               <li><NavLink to="/MentionsLegales" activeClassName='active'>Mentions légales</NavLink></li>
               <li><NavLink to="/APropos" activeClassName='active'> A propos</NavLink></li>
+              <li><NavLink to="/faq" activeClassName='active'> FAQ</NavLink></li>
             </ul>
         </nav>
     </footer>
