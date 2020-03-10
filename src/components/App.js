@@ -21,7 +21,7 @@ export default function App(){
   return <div>
     <Header/>
     <Switch>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/Accueil" component={Home}/>
       <Route exact path="/creation-formulaire" component={CreateForm}/>
       <Route exact path="/creation-tableau" component={CreateTable}/>
       <Route exact path="/mes-creations" component={MyCreations}/>
