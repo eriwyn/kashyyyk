@@ -1,10 +1,6 @@
 import React from "react";
 import axios from 'axios';
-<<<<<<< HEAD:src/js/components/Modal.js
-import "./../../css/Modal.scss";
-=======
 import "../css/components/modal.scss";
->>>>>>> 79025c8c1b9540ce7653017e1197642e4e4c24ed:src/components/Modal.js
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';

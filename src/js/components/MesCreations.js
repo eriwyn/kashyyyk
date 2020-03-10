@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash,faEdit, faBorderStyle } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
-import Modal from './Modal';
+import Modal from './../components/Modal';
 import "./../../css/MesCreations.scss"
 import { trackPromise } from 'react-promise-tracker';
 

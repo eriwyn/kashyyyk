@@ -1,6 +1,5 @@
 @import "../variables";
 
-@import "Variables";
 
 .modal {
   width: 500px;
@@ -16,8 +15,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
 }
+
 .modal.off {
   opacity: 0;
   visibility: hidden;

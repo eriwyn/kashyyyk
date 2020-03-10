@@ -36,20 +36,20 @@ export default function Faq(props){
             </li>
             <li className="article">
                 <article>
-                    <h3>Mes créations et mes données personnelles restent ils privés?</h3>
+                    <h3>Mes créations et mes données personnelles restent ils privées?</h3>
                     <p>Oui. Vos créations sont uniquement récupérables par vous. Ils ne sont en aucun cas partagés ou rendu publics.</p>
                     <p>Il en va de même de vos données personnelles utilisées lors de la création d'un compte. Elles ne sont jamais divulguées ni réutilisées autre part que pour créer un compte et vous maintenir connecté sur Kashyyyk.</p>
                 </article>
             </li>
             <li className="article">
                 <article>
-                    <h3>Votre site utilise t'il des cookies?</h3>
+                    <h3>Le site utilise t'il des cookies?</h3>
                     <p>Bien que nous apprécions les manger :p nous n'utilisons aucun cookies sur Kashyyyk.</p>
                 </article>
             </li>
             <li className="article">
                 <article>
-                    <h3>Pourquoi utiliser votre générateur Html plutôt qu'un autre?</h3>
+                    <h3>Pourquoi utiliser ce générateur Html plutôt qu'un autre?</h3>
                     <p>Tout d'abord notre application se veut accessible contrairement à beaucoup d'autres applications.</p>
                     <p>De plus Kashyyyk est totalement gratuit et cherche au maximum à rendre son utilisation confortable pour chaque utilisateur.
                         Nous avons mis en place une interface simple et facile d'utilisation avec un système de glisser/déposer afin d'améliorer votre expérience de création.

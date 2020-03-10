@@ -1,5 +1,5 @@
 import React  from 'react';
-import './../css/PagesFooter.scss';
+import './../../css/pages/footerPages.scss'
 
 export default function  About(){
     return  <main className="mainPage" >
