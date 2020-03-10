@@ -1,4 +1,4 @@
-@import "Variables";
+@import "variables";
 
 .App {
   text-align: center;
@@ -11,35 +11,43 @@
 a{
   text-decoration: none;
 }
+
 main{
     margin-top: $headerHeight;
 }
-.mainPage{
-  background-color: $colorSombre;
-  color:$colorClaire;
-  flex:1;
-}
+
 html{
   height:100%;
 }
+
 body{
   height: 100%;
 }
  body>div, body>div>div {
   height:100%;
 
+  >div, >div>div {
+    height:100%;
+  }
+
+  >div>div {
+    display:flex;
+    flex-direction: column;
+  }
 }
 
- body>div>div{
-   display:flex;
-   flex-direction: column;
- }
+.active{
+text-decoration: underline;
+color:$colorBleuClair;
 
- .active{
- text-decoration: underline;
- color:$colorBleuClair;
+  &:hover{
+    color:$colorBleuClair;
+  }
+}
 
- &:hover{
-   color:$colorBleuClair;
- }
- }
+.mainPage{
+  background-color: $colorSombre;
+  color:$colorClaire;
+  flex:1;
+  padding: 25px;
+}

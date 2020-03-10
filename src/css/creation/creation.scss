@@ -1,0 +1,29 @@
+@import "../variables";
+
+* {
+  box-sizing: border-box;
+}
+
+.fenetreCreation, .fenetreCode {
+  border: solid 1px $colorBleuClair;
+  color: #fff;
+  padding: 5px;
+  display: flex;
+}
+
+.fenetreCreation > div {
+  width: calc(80% - 40px);
+  margin: 20px;
+}
+
+.previsualisation, .boiteAOutils, .listeElements {
+  border: solid 1px;
+  display: inline-block;
+  background-color: $colorHeaderFooter;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.previsualisation, .boiteAOutils {
+  width: 100%;
+}

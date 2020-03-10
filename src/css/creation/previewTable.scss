@@ -1,0 +1,45 @@
+@import "../variables";
+
+.fenetreCreation > div {
+    width: 100% !important;
+}
+
+.previsualisation {
+    width: 100%;
+    table {
+        margin: auto;
+
+        td.selected, th.selected {
+            border-color: $colorBleuClair;
+            border: 2px solid $colorBleuClair!important;
+        }
+
+        tr, th, td, pre {
+            height: 100%;
+            min-height: 51px;
+            text-align: center;
+        }
+    
+        thead, tfoot {
+            background-color: #515151;
+        }
+    
+        pre {
+            outline: none;
+            color: white;
+            margin: 0;
+            padding: 15px;
+        }
+
+        td, th {
+            border: 2px inset white;
+            border-collapse: collapse;
+        }
+    
+        td, th {
+            width: 50px;
+        }
+    } 
+    
+
+}
