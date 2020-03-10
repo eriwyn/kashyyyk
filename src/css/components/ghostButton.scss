@@ -1,0 +1,17 @@
+@import "../variables";
+
+.ghostButton{
+  border:1px solid $colorBleuClair;
+  padding:1em;
+  text-align:center;
+  color:$colorBleuClair;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  &:hover{
+    color:$colorSombre;
+    background-color: $colorBleuClair;
+  }
+}

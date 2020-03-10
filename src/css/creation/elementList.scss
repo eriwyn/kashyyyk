@@ -1,0 +1,12 @@
+@import "../variables";
+
+.listeElements {
+    width: calc(20% - 20px);
+    height: 620px;
+    margin-right: 20px;
+
+    li {
+        margin-bottom: 10px;
+    }
+}
+  
