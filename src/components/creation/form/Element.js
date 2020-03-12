@@ -212,7 +212,7 @@ export default function Element(props) {
         onDrop={dropHandler}
     >
         <div 
-            tabindex="0"
+            tabIndex="0"
             data-position={props.position}
             className={"element" + isSelected} 
             draggable='true' 

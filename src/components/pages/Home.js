@@ -5,9 +5,9 @@ import '../../css/pages/home.scss';
 
 export default function Home (){
   return <main className="mainPage">
-    <h1>Kashyyyk</h1>
     <div className="flexImageMenu">
       <article className="textCoteImageMenu">
+        <h1>Kashyyyk</h1>
         <p className="paragraphePresentationAccueil">Créez vos formulaires et tableaux</p>
         <p className="paragraphePresentationAccueil">Exportez le code HTML de vos créations</p>
         <p className="paragraphePresentationAccueil">Une prise en main rapide et gratuite</p>
