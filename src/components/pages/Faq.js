@@ -4,7 +4,7 @@ import '../../css/pages/footerPages.scss'
 
 export default function Faq(props){
 
-    return <main className="mainPage">
+    return <main className="faqPage">
         <h1>Foire aux questions</h1>
         <ul className="articles">
             <li className="article">

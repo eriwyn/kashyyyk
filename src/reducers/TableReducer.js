@@ -1,5 +1,5 @@
 const initialState = {
-    "rows": 5,
+    "rows": 6,
     "columns": 6,
     "selected": false,
     "head":[
@@ -43,20 +43,24 @@ const TableReducer=function(currentState = initialState, action){
             });
             break;
         case "REMOVE_LINE":
-            currentState.rows --;
-            currentState[action.data.type].splice(action.data.position, 1);
+            if (currentState.rows > 1) {
+                currentState.rows --;
+                currentState[action.data.type].splice(action.data.position, 1);
+            }
             break;
         case "REMOVE_COLUMN":
-            currentState.columns --;
-            currentState.body.forEach(line => {
-                line.splice(action.data.position, 1)
-            });
-            currentState.head.forEach(line => {
-                line.splice(action.data.position, 1)
-            });
-            currentState.foot.forEach(line => {
-                line.splice(action.data.position, 1)
-            });
+            if (currentState.columns > 1) {
+                currentState.columns --;
+                currentState.body.forEach(line => {
+                    line.splice(action.data.position, 1)
+                });
+                currentState.head.forEach(line => {
+                    line.splice(action.data.position, 1)
+                });
+                currentState.foot.forEach(line => {
+                    line.splice(action.data.position, 1)
+                });
+            }
             break;
         case "UPDATE_FIELD":
             currentState[action.data.type][action.data.row][action.data.column] = action.data.value;

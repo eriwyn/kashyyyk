@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 import '../../../css/creation/toolBox.scss';
 
 const ToolBoxTable = props => {
     const RemoveRowButton = () => {
         if (props.tableSelected) {
-            return <button onClick={() => {
+            return <button className="delete" onClick={() => {
                 props.removeLine(props.tableSelected.type, props.tableSelected.row);
-            }}>Supprimer la ligne</button>
+            }}><FontAwesomeIcon  icon={faMinus}></FontAwesomeIcon> Supprimer la ligne</button>
         } else {
             return false;
         }
@@ -16,19 +18,19 @@ const ToolBoxTable = props => {
 
     const RemoveColumnButton = () => {
         if (props.tableSelected) {
-            return <button onClick={() => {
+            return <button className="delete" onClick={() => {
                 props.removeColumn(props.tableSelected.type, props.tableSelected.column);
-            }}>Supprimer la colonne</button>
+            }}><FontAwesomeIcon  icon={faMinus}></FontAwesomeIcon> Supprimer la colonne</button>
         } else {
             return false;
         }
     }
 
     return <div className="boiteAOutils">
-        <button onClick={() => props.addLine("body")}>Ajouter une ligne</button>
-        <button onClick={props.addColumn}>Ajouter une colonne</button>
-        <button onClick={() => props.addLine("head")}>Ajouter une entête</button>
-        <button onClick={() => props.addLine("foot")}>Ajouter un pied</button>
+        <button onClick={() => props.addLine("body")}><FontAwesomeIcon  icon={faPlus}></FontAwesomeIcon> Ajouter une ligne</button>
+        <button onClick={props.addColumn}><FontAwesomeIcon  icon={faPlus}></FontAwesomeIcon> Ajouter une colonne</button>
+        <button onClick={() => props.addLine("head")}><FontAwesomeIcon  icon={faPlus}></FontAwesomeIcon> Ajouter une entête</button>
+        <button onClick={() => props.addLine("foot")}><FontAwesomeIcon  icon={faPlus}></FontAwesomeIcon> Ajouter un pied</button>
         <RemoveRowButton />
         <RemoveColumnButton />
     </div>

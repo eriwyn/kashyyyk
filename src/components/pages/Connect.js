@@ -84,7 +84,7 @@ export default function Connect() {
             </div>
     }
     
-    return <main className="mainPage">
+    return <main className="connectPage">
         <button onClick={() => setAction("login")}>Connexion</button>
         <button onClick={() => setAction("register")}>Inscription</button>
         {(() => {

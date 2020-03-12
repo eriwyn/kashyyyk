@@ -32,7 +32,7 @@ export default function MyCreations(props){
       }));
     }, []);
 
-    return <main className="mainPage" >
+    return <main className="myCreationsPage" >
         <h1 style={{opacity:opacityModal}}>Mes créations</h1>
         <table style={{opacity:opacityModal}}>
             <thead>

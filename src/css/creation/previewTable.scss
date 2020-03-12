@@ -7,11 +7,27 @@
 .previsualisation {
     width: 100%;
     table {
+        width: auto;
         margin: auto;
 
         td.selected, th.selected {
-            border-color: $colorBleuClair;
-            border: 2px solid $colorBleuClair!important;
+            border: 2px solid $colorBleuClair;
+            background-color: $colorBleuClair;
+            pre {
+                color: black;
+            }
+        }
+
+        td.rowSelected, th.rowSelected {
+            border-top: 2px solid $colorBleuClair;
+            border-bottom: 2px solid $colorBleuClair;
+            background-color: $colorSombre;
+        }
+
+        td.columnSelected, th.columnSelected {
+            border-left: 2px solid $colorBleuClair;
+            border-right: 2px solid $colorBleuClair;
+            background-color: $colorSombre;
         }
 
         tr, th, td, pre {
@@ -34,10 +50,8 @@
         td, th {
             border: 2px inset white;
             border-collapse: collapse;
-        }
-    
-        td, th {
-            width: 50px;
+            width: 100px;
+            padding: 0;
         }
     } 
     

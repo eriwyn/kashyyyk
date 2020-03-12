@@ -4,26 +4,65 @@
   box-sizing: border-box;
 }
 
-.fenetreCreation, .fenetreCode {
-  border: solid 1px $colorBleuClair;
-  color: #fff;
-  padding: 5px;
-  display: flex;
-}
+.createFormPage, .createTablePage {
+  h1, .saveButton {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.fenetreCreation > div {
-  width: calc(80% - 40px);
-  margin: 20px;
-}
+  .saveButton {
+    margin-left: 10px;
+  }
 
-.previsualisation, .boiteAOutils, .listeElements {
-  border: solid 1px;
-  display: inline-block;
-  background-color: $colorHeaderFooter;
-  vertical-align: top;
-  padding: 10px;
-}
+  .fenetreCreation, .fenetreCode {
+    border: solid 1px $colorBleuClair;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+  }
+  
+  .fenetreCreation > div {
+    width: calc(80% - 40px);
+    margin: 20px;
+  }
+  
+  .previsualisation, .boiteAOutils, .listeElements {
+    border: solid 1px;
+    display: inline-block;
+    background-color: $colorHeaderFooter;
+    vertical-align: top;
+    padding: 10px;
+  }
+  
+  .previsualisation, .boiteAOutils {
+    width: 100%;
+  }
 
-.previsualisation, .boiteAOutils {
-  width: 100%;
+  button {
+    border: none;
+    background: $colorBleuClair;
+    font-weight: bold;
+    padding: 5px 10px;
+    
+    &:not(.tab) {
+      margin: 5px;
+    }
+
+    &:hover {
+      color: white;
+    }
+
+    &.delete {
+      background-color: #fb4444;
+    }
+  }
+
+  input {
+    border: 1px solid;
+    padding: 5px;
+  }
+
+  label {
+    margin: 5px;
+  }
 }

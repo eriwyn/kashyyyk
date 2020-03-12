@@ -2,7 +2,7 @@ import React  from 'react';
 import './../../css/pages/footerPages.scss'
 
 export default function Legal (){
-  return  <main className="mainPage">
+  return  <main className="legalPage">
     <h1>Informations légales</h1>
     <article className="article">
       <h2>1. Présentation du site.</h2>

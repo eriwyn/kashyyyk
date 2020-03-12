@@ -8,10 +8,6 @@ a{
   text-decoration: none;
 }
 
-main{
-    margin-top: $headerHeight;
-}
-
 html{
   height:100%;
 }
@@ -29,7 +25,8 @@ body{
   }
 }
 
-.mainPage{
+main{
+  margin-top: $headerHeight;
   background-color: $colorSombre;
   color:$colorClaire;
   flex:1;

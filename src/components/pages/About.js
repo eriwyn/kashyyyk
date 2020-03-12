@@ -1,7 +1,7 @@
 import React  from 'react';
 
 export default function  About(){
-    return  <main className="mainPage" >
+    return  <main className="aboutPage">
       <h1>A Propos</h1>
       <article className="article">
         <h2>Qui sommes nous?</h2>

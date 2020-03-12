@@ -4,7 +4,7 @@ import GhostButton from '../GhostButton.js';
 import '../../css/pages/home.scss';
 
 export default function Home (){
-  return <main className="mainPage">
+  return <main className="homePage">
     <div className="flexImageMenu">
       <article className="textCoteImageMenu">
         <h1>Kashyyyk</h1>

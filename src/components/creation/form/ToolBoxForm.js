@@ -42,7 +42,7 @@ const ToolBoxForm = props => {
     }
 
     const DeleteTool = () => {
-        return <button onClick={() => {props.removeElement(props.selected)}}>
+        return <button className="delete" onClick={() => {props.removeElement(props.selected)}}>
             Supprimer l'élément
         </button>
     }
@@ -52,7 +52,7 @@ const ToolBoxForm = props => {
             {props.formList[props.selected].valeurs.map((valeur, index) => {
                 let deleteButton = false;
                 if (props.formList[props.selected].valeurs.length > 1) {
-                    deleteButton = <button onClick={() => {
+                    deleteButton = <button  className="delete" onClick={() => {
                         props.removeValue(props.selected, index);
                     }}>-</button>
                 }

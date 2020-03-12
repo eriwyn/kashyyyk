@@ -35,6 +35,16 @@ const PreviewTable = props => {
 
     const Field = (props) => {
         let isSelected = "";
+        
+        if (props.selected.type === props.type && 
+            parseInt(props.selected.row) === parseInt(props.row_number)) 
+        {
+            isSelected += " rowSelected";
+        }
+        if (parseInt(props.selected.column) === parseInt(props.column_number)) {
+            isSelected += " columnSelected";
+        }
+
         if (props.selected.type === props.type && 
             parseInt(props.selected.row) === parseInt(props.row_number) && 
             parseInt(props.selected.column) === parseInt(props.column_number)) 
