@@ -7,6 +7,7 @@ import PreviewTable from '../creation/table/PreviewTable.js';
 import ToolBoxTable from '../creation/table/ToolBoxTable.js';
 
 import ElementList from '../creation/form/ElementList.js'
+import ImportForm from '../creation/form/ImportForm.js'
 
 export default function FenetreCreation(props) {
 
@@ -17,6 +18,7 @@ export default function FenetreCreation(props) {
                 <PreviewForm />
             </div>
             <ElementList type="formulaire" />
+            <ImportForm />
         </div>
     }
 

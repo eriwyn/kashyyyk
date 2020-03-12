@@ -120,7 +120,7 @@ const ToolBoxForm = props => {
 
     const ButtonTools = () => {
         return <div className="boiteAOutils">
-            <LibelleTool />
+            <TextTool />
             <DeleteTool />
         </div>
     }

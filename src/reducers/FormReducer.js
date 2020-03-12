@@ -77,6 +77,18 @@ const FormReducer=function(currentState = initialState, action){
                 currentState.selected = action.data.position;
             }
             break;
+        case "IMPORT_FILE":
+            if (action.data.file) {
+                currentState.updatePreview = !currentState.updatePreview;
+                currentState.updateToolBox = !currentState.updateToolBox;
+                
+                currentState.selected = -1;
+
+                let importedElements = JSON.parse(action.data.file);
+
+                currentState.elements = importedElements.elements;
+            }
+            break;
         default:
             break;
     }
