@@ -1,15 +1,12 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
-
 import GoogleLogin from 'react-google-login';
-// import Singup from './components/Singup';
-// import Login from './components/Login';
-// import PageProjets from './components/PageProjets';
 
 import '../../css/pages/connect.scss';
 
 export default function Connect() {
+    const [action, setAction] = useState("login");
+
     const Login = () => {
         const responseFacebook = (response) => {
             console.log(response);
@@ -19,7 +16,7 @@ export default function Connect() {
             console.log(response);
         }
       
-        return <main className="mainPage">
+        return <div>
             <h1>Connexion</h1>
     
             <fieldset>
@@ -35,7 +32,7 @@ export default function Connect() {
                         <input type="password" name="mdp" id="mdp" placeholder="•••••" />
                     </li>
                     <li>
-                        <button type="button">Enregistrer</button>
+                        <button type="button">Se connecter</button>
                     </li>
                 </ul>
             </fieldset>
@@ -54,11 +51,11 @@ export default function Connect() {
               onFailure={responseGoogle}
               theme="dark"
             />
-        </main>
+        </div>
     }
 
     const Register = () => {
-        return <main className="mainPage">
+        return <div>
                 <h1>Inscription</h1>
                 <fieldset>
                     <legend>Coordonnées :</legend>
@@ -80,13 +77,23 @@ export default function Connect() {
                             <input type="password" name="mdp" id="mdp" placeholder="•••••" />
                         </li>
                         <li>
-                            <button type="button">Enregistrer</button>
+                            <button type="button">S'inscrire</button>
                         </li>
                     </ul>
                 </fieldset>
-            </main>
+            </div>
     }
     
-    return <Login />
+    return <main className="mainPage">
+        <button onClick={() => setAction("login")}>Connexion</button>
+        <button onClick={() => setAction("register")}>Inscription</button>
+        {(() => {
+            switch (action) {
+                case "login":   return <Login />;
+                case "register": return <Register />;
+            }
+        })()}
+        
+    </main>
 }
 
