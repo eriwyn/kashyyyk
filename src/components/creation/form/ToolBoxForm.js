@@ -16,6 +16,8 @@ const ToolBoxForm = props => {
                 name="libelleTool" 
                 defaultValue={props.formList[props.selected].libelle} 
                 onChange={(event) => {
+                    console.log(props.selected);
+                    console.log(event.target.value);
                     props.updateElement(props.selected, "libelle", event.target.value)
                 }} 
             />

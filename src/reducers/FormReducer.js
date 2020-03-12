@@ -49,7 +49,7 @@ const FormReducer=function(currentState = initialState, action){
             break;
         case "UPDATE_ELEMENT":
             currentState.updatePreview = !currentState.updatePreview;
-            if (action.data.position && action.data.attribute) {
+            if (action.data.position > -1 && action.data.attribute) {
                 currentState.elements[action.data.position][action.data.attribute] = action.data.value;
             }
             break;
