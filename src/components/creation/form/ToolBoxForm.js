@@ -12,7 +12,7 @@ const ToolBoxForm = props => {
     const LibelleTool = () => {
         return <div className="libelleTool">
             <label htmlFor="libelleTool">
-                Libellé
+                Libellé :
             </label>
             <input 
                 type="text" 
@@ -31,7 +31,7 @@ const ToolBoxForm = props => {
     const TextTool = () => {
         return <div className="textTool">
             <label htmlFor="texteTool">
-                Texte
+                Texte :
             </label>
             <input 
                 type="text" 
@@ -53,6 +53,7 @@ const ToolBoxForm = props => {
 
     const ValuesTool = () => {
         return <div className="valuesTool">
+            <p>Valeurs :</p>
             <button onClick={() => {
                 props.addValue(props.selected)
             }}>
