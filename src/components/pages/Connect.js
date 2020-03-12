@@ -34,7 +34,7 @@ export default function Connect() {
         </fieldset>
 
         <FacebookLogin
-          appId="485861328636281"
+          appId="1232819600261251"
           fields="name,email,picture"
           callback={responseFacebook}
           textButton="Connexion avec Facebook"
