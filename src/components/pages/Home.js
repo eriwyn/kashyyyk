@@ -15,13 +15,13 @@ export default function Home (){
       <img src="dessin.jpg" alt="développement web"/>
     </div>
     <div className="divButton">
-        <GhostButton lien="/formulaire" text="Créer un formulaire"/>
-        <GhostButton lien="#" text="Créer un tableau"/>
+        <GhostButton lien="/creation-formulaire" text="Créer un formulaire"/>
+        <GhostButton lien="creation-tableau" text="Créer un tableau"/>
     </div>
     <div className="divCompteAccueil">
       <h2 className="h2AccueilCompte">Vous voulez sauvegarder votre travail ?</h2>
       <p>Créez un compte pour découvrir cette fonctionnalité</p>
-      <GhostButton lien="#" text="Créer un compte"/>
+      <GhostButton lien="/connect" text="Créer un compte"/>
     </div>
   </main>
 }

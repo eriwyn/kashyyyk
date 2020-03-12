@@ -7,7 +7,7 @@ export default function  About(){
       <article className="article">
         <h2>Qui sommes nous?</h2>
         <p>Nous sommes un groupe de 2 étudiants en licence pro en mmi-développement web à l'IUT de Haguenau.</p>
-        <img src="#"/>
+        {/* <img src="#"/> */}
       </article>
       <article className="article">
         <h2>Notre projet</h2>

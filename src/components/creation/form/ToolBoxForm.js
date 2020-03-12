@@ -4,208 +4,124 @@ import { connect } from "react-redux";
 import '../../../css/creation/toolBox.scss';
 
 const ToolBoxForm = props => {
+
+    const LibelleTool = () => {
+        return <div>
+            <label htmlFor="libelleTool">
+                Libellé
+            </label>
+            <input 
+                type="text" 
+                id="libelleTool" 
+                name="libelleTool" 
+                defaultValue={props.formList[props.selected].libelle} 
+                onChange={(event) => {
+                    console.log(props.selected);
+                    console.log(event.target.value);
+                    props.updateElement(props.selected, "libelle", event.target.value)
+                }} 
+            />
+        </div>
+    }
+
+    const TextTool = () => {
+        return <div>
+            <label htmlFor="texteTool">
+                Texte
+            </label>
+            <input 
+                type="text" 
+                id="texteTool" 
+                name="texteTool" 
+                defaultValue={props.formList[props.selected].texte} 
+                onChange={(event) => {
+                    props.updateElement(props.selected, "texte", event.target.value)
+                }} 
+            />
+        </div>
+    }
+
+    const DeleteTool = () => {
+        return <button onClick={() => {props.removeElement(props.selected)}}>
+            Supprimer l'élément
+        </button>
+    }
+
+    const ValuesTool = () => {
+        return <div>
+            {props.formList[props.selected].valeurs.map((valeur, index) => {
+                let deleteButton = false;
+                if (props.formList[props.selected].valeurs.length > 1) {
+                    deleteButton = <button onClick={() => {
+                        props.removeValue(props.selected, index);
+                    }}>-</button>
+                }
+                
+                return <div key={index}>
+                    <input 
+                        type="text" 
+                        id="libelleTool" 
+                        name="libelleTool" 
+                        defaultValue={valeur} 
+                        onChange={(event) => {
+                            let newValues = props.formList[props.selected].valeurs;
+                            newValues[index] = event.target.value;
+                            props.updateElement(props.selected, "valeurs", newValues)
+                        }} 
+                    />
+                    {deleteButton}
+                </div>
+            })}
+            <button onClick={() => {
+                props.addValue(props.selected)
+            }}>
+                Ajouter une valeur
+            </button>
+        </div>
+    }
+
     const InputTextTools = () => {
         return <div className="boiteAOutils">
-            <div>
-                <label htmlFor="libelleTool">
-                    Libellé
-                </label>
-                <input 
-                    type="text" 
-                    id="libelleTool" 
-                    name="libelleTool" 
-                    defaultValue={props.formList[props.selected].libelle} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "libelle", event.target.value)
-                    }} 
-                />
-            </div>
-            <div>
-                <label htmlFor="texteTool">
-                    Texte
-                </label>
-                <input 
-                    type="text" 
-                    id="texteTool" 
-                    name="texteTool" 
-                    defaultValue={props.formList[props.selected].texte} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "texte", event.target.value)
-                    }} 
-                />
-            </div>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <LibelleTool />
+            <TextTool />
+            <DeleteTool />
         </div>
     }
 
     const TextAreaTools = () => {
         return <div className="boiteAOutils">
-            <div>
-                <label htmlFor="libelleTool">
-                    Libellé
-                </label>
-                <input 
-                    type="text" 
-                    id="libelleTool" 
-                    name="libelleTool" 
-                    defaultValue={props.formList[props.selected].libelle} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "libelle", event.target.value)
-                    }} 
-                />
-            </div>
-            <div>
-                <label htmlFor="texteTool">
-                    Texte
-                </label>
-                <input 
-                    type="text" 
-                    id="texteTool" 
-                    name="texteTool" 
-                    defaultValue={props.formList[props.selected].texte} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "texte", event.target.value)
-                    }} 
-                />
-            </div>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <LibelleTool />
+            <TextTool />
+            <DeleteTool />
         </div>
     }
 
     const SelectTools = () => {
         return <div className="boiteAOutils">
-            <div>
-                <label htmlFor="libelleTool">
-                    Libellé
-                </label>
-                <input 
-                    type="text" 
-                    id="libelleTool" 
-                    name="libelleTool" 
-                    defaultValue={props.formList[props.selected].libelle} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "libelle", event.target.value)
-                    }} 
-                />
-            </div>
-            {props.formList[props.selected].valeurs.map((valeur, index) => {
-                return <div key={index}>
-                    <input 
-                        type="text" 
-                        id="libelleTool" 
-                        name="libelleTool" 
-                        defaultValue={valeur} 
-                        onChange={(event) => {
-                            let newValues = props.formList[props.selected].valeurs;
-                            newValues[index] = event.target.value;
-                            props.updateElement(props.selected, "valeurs", newValues)
-                        }} 
-                    />
-                    <button onClick={() => {
-                        let newValues = props.formList[props.selected].valeurs;
-                        newValues.splice(index, 1);
-                        props.updateElement(props.selected, "valeurs", newValues)
-                    }}>-</button>
-                </div>
-            })}
-            <button onClick={() => {
-                props.addValue(props.selected)
-            }}>
-                Ajouter une valeur
-            </button>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <LibelleTool />
+            <ValuesTool />
+            <DeleteTool />
         </div>
     }
 
     const RadioTools = () => {
         return <div className="boiteAOutils">
-            {props.formList[props.selected].valeurs.map((valeur, index) => {
-                return <div key={index}>
-                    <input 
-                        type="text" 
-                        id="libelleTool" 
-                        name="libelleTool" 
-                        defaultValue={valeur} 
-                        onChange={(event) => {
-                            let newValues = props.formList[props.selected].valeurs;
-                            newValues[index] = event.target.value;
-                            props.updateElement(props.selected, "valeurs", newValues)
-                        }} 
-                    />
-                    <button onClick={() => {
-                        let newValues = props.formList[props.selected].valeurs;
-                        newValues.splice(index, 1);
-                        props.updateElement(props.selected, "valeurs", newValues)
-                    }}>-</button>
-                </div>
-            })}
-            <button onClick={() => {
-                props.addValue(props.selected)
-            }}>
-                Ajouter une valeur
-            </button>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <ValuesTool />
+            <DeleteTool />
         </div>
     }
 
     const CheckBoxTools = () => {
         return <div className="boiteAOutils">
-            {props.formList[props.selected].valeurs.map((valeur, index) => {
-                return <div key={index}>
-                    <input 
-                        type="text" 
-                        id="libelleTool" 
-                        name="libelleTool" 
-                        defaultValue={valeur} 
-                        onChange={(event) => {
-                            let newValues = props.formList[props.selected].valeurs;
-                            newValues[index] = event.target.value;
-                            props.updateElement(props.selected, "valeurs", newValues)
-                        }} 
-                    />
-                    <button onClick={() => {
-                        props.removeValue(props.selected, index);
-                    }}>-</button>
-                </div>
-            })}
-            <button onClick={() => {
-                props.addValue(props.selected)
-            }}>
-                Ajouter une valeur
-            </button>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <ValuesTool />
+            <DeleteTool />
         </div>
     }
 
     const ButtonTools = () => {
         return <div className="boiteAOutils">
-            <div>
-                <label htmlFor="texteTool">
-                    Texte
-                </label>
-                <input 
-                    type="text" 
-                    id="texteTool" 
-                    name="texteTool" 
-                    defaultValue={props.formList[props.selected].texte} 
-                    onChange={(event) => {
-                        props.updateElement(props.selected, "texte", event.target.value)
-                    }} 
-                />
-            </div>
-            <button onClick={() => {props.removeElement(props.selected)}}>
-                Supprimer l'élément
-            </button>
+            <LibelleTool />
+            <DeleteTool />
         </div>
     }
 

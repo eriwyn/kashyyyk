@@ -66,7 +66,7 @@ export default function MyCreations(props){
                             <td data-label="Nom du projet">{creation.name}</td>
                             <td data-label="créé le ">{date}</td>
                             <td data-label="Dernière modification">{creation.updated_at}</td>
-                            <td data-label="Modification"><Link to={"/"+type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
+                            <td data-label="Modification"><Link to={"/creation-"+type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
                             <td data-label="Suppression"><span  onClick={event=>showModal(event,id)} className="iconeRed"><FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon></span></td>
                         </tr>
                     )
