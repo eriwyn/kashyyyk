@@ -61,19 +61,19 @@ export default function Connect() {
                     <legend>Coordonnées :</legend>
                     <ul>
                         <li>
-                            <label for="email">Email : </label>
+                            <label htmlFor="email">Email : </label>
                             <input type="email" name="email" id="email" placeholder="exemple@gmail.com" />
                         </li>
                         <li>
-                            <label for="nom">Nom : </label>
+                            <label htmlFor="nom">Nom : </label>
                             <input type="text" name="nom" id="nom" placeholder="nom" />
                         </li>
                         <li>
-                            <label for="prenom">Prénom : </label>
+                            <label htmlFor="prenom">Prénom : </label>
                             <input type="text" name="prenom" id="prenom" placeholder="prenom" />
                         </li>
                         <li>
-                            <label for="mdp">Mot de passe : </label>
+                            <label htmlFor="mdp">Mot de passe : </label>
                             <input type="password" name="mdp" id="mdp" placeholder="•••••" />
                         </li>
                         <li>
