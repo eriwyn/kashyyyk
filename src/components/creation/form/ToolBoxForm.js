@@ -50,6 +50,13 @@ const ToolBoxForm = props => {
     const ValuesTool = () => {
         return <div>
             {props.formList[props.selected].valeurs.map((valeur, index) => {
+                let deleteButton = false;
+                if (props.formList[props.selected].valeurs.length > 1) {
+                    deleteButton = <button onClick={() => {
+                        props.removeValue(props.selected, index);
+                    }}>-</button>
+                }
+                
                 return <div key={index}>
                     <input 
                         type="text" 
@@ -62,9 +69,7 @@ const ToolBoxForm = props => {
                             props.updateElement(props.selected, "valeurs", newValues)
                         }} 
                     />
-                    <button onClick={() => {
-                        props.removeValue(props.selected, index);
-                    }}>-</button>
+                    {deleteButton}
                 </div>
             })}
             <button onClick={() => {
