@@ -19,6 +19,7 @@ const FenetreCode = props => {
     }
 
     return <div className="fenetreCode">
+        <h2>Votre Code : </h2>
         <pre>{contentHtml}</pre>
     </div>
 }

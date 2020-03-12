@@ -1,3 +1,11 @@
-.fenetreCode pre {
-    color: white;
+.fenetreCode {
+    padding: 20px;
+    
+    pre {
+        color: white;
+        display: block;
+        border: 1px solid white;
+        height: 500px;
+        overflow-y: scroll;
+    }
 }

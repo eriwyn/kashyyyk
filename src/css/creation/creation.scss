@@ -14,11 +14,13 @@
     margin-left: 10px;
   }
 
+  .fenetreCreation {
+    display: flex;
+  }
+
   .fenetreCreation, .fenetreCode {
     border: solid 1px $colorBleuClair;
     color: #fff;
-    padding: 5px;
-    display: flex;
   }
   
   .fenetreCreation > div {
