@@ -43,25 +43,6 @@
     width: 100%;
   }
 
-  button {
-    border: none;
-    background: $colorBleuClair;
-    font-weight: bold;
-    padding: 5px 10px;
-    
-    &:not(.tab) {
-      margin: 5px;
-    }
-
-    &:hover {
-      color: white;
-    }
-
-    &.delete {
-      background-color: #fb4444;
-    }
-  }
-
   select {
     border: 1px solid black;
     padding: 5px 10px;

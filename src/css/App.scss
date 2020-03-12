@@ -32,3 +32,22 @@ main{
   flex:1;
   padding: 25px;
 }
+
+button {
+  border: none;
+  background: $colorBleuClair;
+  font-weight: bold;
+  padding: 5px 10px;
+  
+  &:not(.tab) {
+    margin: 5px;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &.delete {
+    background-color: #fb4444;
+  }
+}

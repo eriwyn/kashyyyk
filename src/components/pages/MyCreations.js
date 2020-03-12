@@ -1,4 +1,5 @@
 import React  , {useState, useEffect } from 'react';
+import { connect } from "react-redux";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +9,7 @@ import { trackPromise } from 'react-promise-tracker';
 
 import "../../css/pages/myCreations.scss"
 
-export default function MyCreations(props){
+const MyCreations = props => {
     const [creation, setCreation]=useState([]);
     const [show,setShow]=useState(false);
     const [idToDelete,setIdToDelete]=useState('');
@@ -66,7 +67,7 @@ export default function MyCreations(props){
                             <td data-label="Nom du projet">{creation.name}</td>
                             <td data-label="créé le ">{date}</td>
                             <td data-label="Dernière modification">{creation.updated_at}</td>
-                            <td data-label="Modification"><Link to={"/creation-"+type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
+                            <td data-label="Modification"><Link onClick={() => props.import_file(creation.content)} to={"/creation-"+type } params={{"id":creation.id}} className="iconeWhite"><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link></td>
                             <td data-label="Suppression"><span  onClick={event=>showModal(event,id)} className="iconeRed"><FontAwesomeIcon  icon={faTrash}></FontAwesomeIcon></span></td>
                         </tr>
                     )
@@ -79,8 +80,20 @@ export default function MyCreations(props){
             Voulez vous vraiment supprimer votre création ?
         </Modal>
     </main>
-
-
-
-
 };
+
+
+// définition des actions dispatchables
+const mapDispatchToProps = dispatch => {
+    return {
+        import_file: file => {
+            dispatch({ type: "IMPORT_FILE", data: { file } });
+        }
+    };
+};
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(MyCreations);
+
