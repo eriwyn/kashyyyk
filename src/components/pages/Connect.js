@@ -41,7 +41,7 @@ export default function Connect() {
         />
 
         <GoogleLogin
-          clientId="217725423705-au5n448v5vhc4qr47aelmam95r1ceicq.apps.googleusercontent.com"
+          clientId="996141723746-ak7frmnjnt3ul7e6blabl6ir7s0d9b5h.apps.googleusercontent.com"
           buttonText="Connexion avec Google"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
