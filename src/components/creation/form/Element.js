@@ -49,6 +49,7 @@ export default function Element(props) {
             {props.libelle}
         </label>,
         <input 
+            disabled
             key="textElementInput" 
             type="text" id={elementId} 
             name={elementId} 
@@ -58,6 +59,7 @@ export default function Element(props) {
 
     const buttonElement = [
         <button 
+        disabled
             key="buttonElementButton" 
             id={elementId} 
             name={elementId}
@@ -74,6 +76,7 @@ export default function Element(props) {
             {props.libelle}
         </label>,
         <textarea 
+            disabled
             key="textAreaElementTextArea" 
             id={elementId} 
             name={elementId} 
@@ -94,6 +97,7 @@ export default function Element(props) {
                 {props.libelle}
             </label>,
             <select 
+                disabled
                 key="selectElementSelect" 
                 id={elementId} 
                 name={elementId}
@@ -113,6 +117,7 @@ export default function Element(props) {
             props.valeurs.map((valeur, index) => {
                 return <div key={index}>
                     <input 
+                        disabled
                         type="radio" 
                         id={elementId + '_' + slugify(valeur)} 
                         name={elementId} 
@@ -129,6 +134,7 @@ export default function Element(props) {
             props.valeurs.map((valeur, index) => {
                 return <div key={index}>
                     <input 
+                        disabled
                         type="checkbox" 
                         id={elementId + '_' + slugify(valeur)} 
                         name={elementId + '_' + slugify(valeur)} 

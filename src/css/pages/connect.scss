@@ -1,5 +1,28 @@
 @import "../variables";
 
-.fb_reset {
-    height: 0;
+.connectPage {
+    display: flex;
+
+    >div {
+        margin: auto;
+        width: 500px;
+        height: 500px;
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    }
+
+    .kep-login-facebook {
+        font-size: 12px;
+        padding: 10px;
+    }
 }
+
+
+.fb_reset {
+    display: none;
+}
+
+
