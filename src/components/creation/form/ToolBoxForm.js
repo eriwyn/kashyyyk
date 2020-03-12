@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+
 import '../../../css/creation/toolBox.scss';
+import '../../../css/creation/toolBoxForm.scss';
 
 const ToolBoxForm = props => {
 
     const LibelleTool = () => {
-        return <div>
+        return <div className="libelleTool">
             <label htmlFor="libelleTool">
                 Libellé
             </label>
@@ -25,7 +29,7 @@ const ToolBoxForm = props => {
     }
 
     const TextTool = () => {
-        return <div>
+        return <div className="textTool">
             <label htmlFor="texteTool">
                 Texte
             </label>
@@ -43,18 +47,23 @@ const ToolBoxForm = props => {
 
     const DeleteTool = () => {
         return <button className="delete" onClick={() => {props.removeElement(props.selected)}}>
-            Supprimer l'élément
+            <FontAwesomeIcon  icon={faTimes}></FontAwesomeIcon> Supprimer l'élément
         </button>
     }
 
     const ValuesTool = () => {
-        return <div>
+        return <div className="valuesTool">
+            <button onClick={() => {
+                props.addValue(props.selected)
+            }}>
+                <FontAwesomeIcon  icon={faPlus}></FontAwesomeIcon> Ajouter une valeur
+            </button>
             {props.formList[props.selected].valeurs.map((valeur, index) => {
                 let deleteButton = false;
                 if (props.formList[props.selected].valeurs.length > 1) {
                     deleteButton = <button  className="delete" onClick={() => {
                         props.removeValue(props.selected, index);
-                    }}>-</button>
+                    }}><FontAwesomeIcon  icon={faTimes}></FontAwesomeIcon></button>
                 }
                 
                 return <div key={index}>
@@ -72,11 +81,6 @@ const ToolBoxForm = props => {
                     {deleteButton}
                 </div>
             })}
-            <button onClick={() => {
-                props.addValue(props.selected)
-            }}>
-                Ajouter une valeur
-            </button>
         </div>
     }
 
@@ -150,7 +154,9 @@ const ToolBoxForm = props => {
         }
     }
     
-    return <div className="boiteAOutils"></div>
+    return <div className="boiteAOutils">
+        <p>Aucun élément sélectionné...</p>
+    </div>
 }
 
 // définition des données à récupérer dans le store

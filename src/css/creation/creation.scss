@@ -31,9 +31,12 @@
     display: inline-block;
     background-color: $colorHeaderFooter;
     vertical-align: top;
-    padding: 10px;
   }
   
+  .previsualisation, .listeElements {
+    padding: 20px;
+  }
+
   .previsualisation, .boiteAOutils {
     width: 100%;
   }
@@ -57,6 +60,11 @@
     }
   }
 
+  select {
+    border: 1px solid black;
+    padding: 5px 10px;
+  }
+
   input {
     border: 1px solid;
     padding: 5px;
@@ -64,5 +72,27 @@
 
   label {
     margin: 5px;
+  }
+
+  .import {
+    display: inline-block;
+    vertical-align: middle;
+
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      cursor: pointer;
+      background: $colorBleuClair;
+      font-weight: bold;
+      padding: 5px 10px;
+      color: black;
+
+      &:hover {
+        color: white;
+      }
+    }
   }
 }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import formToHtml from '../../tools/formToHtml.js';
 import tableToHtml from '../../tools/tableToHtml.js';
 
+import '../../css/creation/codeTab.scss';
+
 const FenetreCode = props => {
     let contentHtml;
     switch (props.type) {

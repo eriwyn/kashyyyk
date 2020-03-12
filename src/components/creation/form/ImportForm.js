@@ -1,6 +1,9 @@
 import React  from 'react';
 import { connect } from "react-redux";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
+
 const ImportForm = props=> {
 
 
@@ -18,7 +21,12 @@ const ImportForm = props=> {
         fileReader.readAsText(fileToLoad, "UTF-8");
     }
 
-    return <input type="file" onChange={loadFileAsText} />
+    return <div className="import">
+        <label for="file-upload">
+            <FontAwesomeIcon  icon={faUpload}></FontAwesomeIcon> Charger un fichier
+        </label>
+        <input id="file-upload" type="file" onChange={loadFileAsText} />
+    </div>
 }
 
 // définition des actions dispatchables
