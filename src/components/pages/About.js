@@ -6,7 +6,12 @@ export default function  About(){
       <article className="article">
         <h2>Qui sommes nous?</h2>
         <p>Nous sommes un groupe de 2 étudiants en licence pro en mmi-développement web à l'IUT de Haguenau.</p>
-        {/* <img src="#"/> */}
+        <div className="flexAPropos">
+          <div className="divImageAPropos">
+            <img src="./../../../photoXav.jfif" alt="Xavier ALBIC" className="imgAPropos"></img>
+            <span>Xavier ALBIC</span>
+          </div>
+        </div>
       </article>
       <article className="article">
         <h2>Notre projet</h2>
@@ -14,7 +19,7 @@ export default function  About(){
         facilement au plus grand nombre de personnes de créer des éléments courants d'une page web. La réalisation de cette application nous a permis de gagner en maturité pour ce qui est de la gestion
         d'un projet web de taille conséquente et nous aura égalemet permis de nous former à une nouvelle technologie: react.</p>
         <p>La réalisation de ce projet nous a permis de faire face aux nombreuses étapes de reflexion et de conception d'une application web.</p>
-        <p>Certaines de ces étapes étaient nouvelles pour nous. Nous avons donc pu parfaire notre apprentissage de la réalisation d'application web </p>
+        <p>Certaines de ces étapes étaient nouvelles pour nous. Nous avons donc pu parfaire l'apprentissage de notre métier. </p>
       </article>
       
     </main>
