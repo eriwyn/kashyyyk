@@ -23,10 +23,10 @@ function Header(props){
   }
 
   return <header className="Navbar">
-    <Link to="/Accueil" className="Navbar__Link logo"><img src="logo.svg" id="logo" alt="Kashyyyk" /></Link>
+    <Link to="/home" className="Navbar__Link logo"><img src="logo.svg" id="logo" alt="Kashyyyk" /></Link>
     <nav className="Navbar__Items">
       <ul>
-        <li><NavLink to="/Accueil"  activeClassName='active'>Accueil</NavLink></li>
+        <li><NavLink to="/home"  activeClassName='active'>Accueil</NavLink></li>
         <li><NavLink to="/creation-formulaire"  activeClassName="active">Créer un formulaire</NavLink></li>
         <li><NavLink to="/creation-tableau" activeClassName="active">Créer un tableau</NavLink></li>
         <li><NavLink to="/mes-creations"  activeClassName="active">Mes créations</NavLink></li>
