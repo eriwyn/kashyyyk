@@ -27,7 +27,9 @@ const MyCreations = props => {
         }
 
     }
-    useEffect(() => { trackPromise(axios.get("https://kashyyyk-api.stark.mmi-unistra.fr/mescreations").then(response => {
+    useEffect(() => { 
+        console.log("https://kashyyyk-api.stark.mmi-unistra.fr/mescreations/" + props.connectedUser);
+        trackPromise(axios.get("https://kashyyyk-api.stark.mmi-unistra.fr/mescreations/" + props.connectedUser).then(response => {
           setCreation(response.data) 
           console.log(response)     
       }));
@@ -82,6 +84,11 @@ const MyCreations = props => {
     </main>
 };
 
+const mapStateToProps = reduxState => {
+    return {
+        connectedUser: reduxState.userReducer.user
+    }
+};
 
 // définition des actions dispatchables
 const mapDispatchToProps = dispatch => {
@@ -93,7 +100,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(MyCreations);
 
