@@ -19,9 +19,7 @@ export default function Connect() {
         return <div>
             <h1>Connexion</h1>
     
-            <fieldset>
-                <legend>Informations :</legend>
-                
+            <fieldset>              
                 <ul>
                     <li>
                         <label htmlFor="email">Email : </label>
@@ -58,7 +56,6 @@ export default function Connect() {
         return <div>
                 <h1>Inscription</h1>
                 <fieldset>
-                    <legend>Coordonnées :</legend>
                     <ul>
                         <li>
                             <label htmlFor="email">Email : </label>
