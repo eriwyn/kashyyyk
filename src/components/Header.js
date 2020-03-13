@@ -8,20 +8,17 @@ import '../css/components/header.scss';
 function Header(props){
   const ConnectionButton = () => {
     //A Faire
-    // const changementEtatCo=(event)=>{
-    //   event.preventDefault();
-    //   props.connectUser(784);
-    // }
-
-    // if(props.connectedUser){
-    //   return <a href="#">Se Déconnecter</a>
-    // }
-    // else{
-    //   return <a onClick={changementEtatCo} href="#">Se Connecter</a>
-    // }
-    
-
-    return <NavLink to="/connect"  activeClassName="active">Se connecter</NavLink>
+    const changementEtatCo=(event)=>{
+      event.preventDefault();
+      props.disconnectUser();
+    }
+    console.log(props.connectedUser.connected)
+    if(props.connectedUser > -1){
+      return <a href="#" onClick={changementEtatCo} activeClassName="active">Se déconnecter</a>
+    }
+    else{
+      return <NavLink to="/connect"  activeClassName="active">Se connecter</NavLink>
+    }
   }
   
   function classToggle() {
@@ -29,6 +26,7 @@ function Header(props){
 
     navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
   }
+ 
 
   return <header className="Navbar">
     <Link to="/home" className="Navbar__Link logo"><img src="logo.svg" id="logo" alt="Kashyyyk" /></Link>
@@ -47,17 +45,17 @@ function Header(props){
 
 const mapStateToProps = reduxState => {
   return {
-      connectedUser: reduxState.ConnexionReducer
+      connectedUser: reduxState.userReducer.user
     }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    deconnexion:  ()=> {
-      dispatch({ type: "DECONNEXION"});
+    disconnectUser:  ()=> {
+      dispatch({ type: "DISCONNECT_USER"});
     },
     connectUser:userId=>{
-      dispatch({type:"CONNEXION",data:{userId}})
+      dispatch({type:"CONNECT_USER",data:{userId}})
     }
   };
 };
