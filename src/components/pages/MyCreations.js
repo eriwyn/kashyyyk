@@ -27,7 +27,7 @@ const MyCreations = props => {
         }
 
     }
-    useEffect(() => { trackPromise(axios.get("https://kashyyyk.stark.mmi-unistra.fr/mescreations").then(response => {
+    useEffect(() => { trackPromise(axios.get("https://kashyyyk-api.stark.mmi-unistra.fr/mescreations").then(response => {
           setCreation(response.data) 
           console.log(response)     
       }));

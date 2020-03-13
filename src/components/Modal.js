@@ -13,7 +13,7 @@ export default class Modal extends React.Component {
     var id=this.props.idDelete;
     console.log("id="+id)
     var deleted=1;
-    axios.delete("https://kashyyyk.stark.mmi-unistra.fr",id).then(() => {  
+    axios.delete("https://kashyyyk-api.stark.mmi-unistra.fr/mescreations",id).then(() => {  
       this.props.onClose && this.props.onClose(e);
     })  
   }
