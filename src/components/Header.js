@@ -8,17 +8,18 @@ import '../css/components/header.scss';
 function Header(props){
   const ConnectionButton = () => {
     //A Faire
-    const changementEtatCo=(event)=>{
-      event.preventDefault();
-      props.disconnectUser();
-    }
-    console.log(props.connectedUser.connected)
-    if(props.connectedUser > -1){
-      return <a href="#" onClick={changementEtatCo} activeClassName="active">Se déconnecter</a>
-    }
-    else{
-      return <NavLink to="/connect"  activeClassName="active">Se connecter</NavLink>
-    }
+  //   const changementEtatCo=(event)=>{
+  //     event.preventDefault();
+  //     props.disconnectUser();
+  //   }
+  //   console.log(props.connectedUser.connected)
+  //   if(props.connectedUser > -1){
+  //     return <a href="#" onClick={changementEtatCo} activeClassName="active">Se déconnecter</a>
+  //   }
+  //   else{
+  //     return <NavLink to="/connect"  activeClassName="active">Se connecter</NavLink>
+  //   }
+  return <NavLink to="/connect"  activeClassName="active">Se connecter</NavLink>
   }
   
   function classToggle() {

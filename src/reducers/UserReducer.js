@@ -1,22 +1,23 @@
 import * as R from "ramda";
 
 const initialState = {
-  user: -1
+  list: ["The Very First One", "Martin Matin"]
 };
 
-const UserReducer = function(currentState = initialState, action){
+const UserReducer = function(previousState = initialState, action) {
+  const newState = R.clone(previousState);
   switch (action.type) {
-    case "CONNECT_USER":
-      currentState.user = action.data.userId;
-      break;
-    case "DISCONNECT_USER":
-      currentState.user = -1;
-      break;
+    case "ADD_USER":
+      newState.list.push(action.data.username);
+      return newState;
+    case "REMOVE_USER":
+      newState.list = newState.list.filter(
+        user => user !== action.data.username
+      );
+      return newState;
     default:
-      break;
+      return newState;
   }
-
-  return currentState;
 };
 
 export default UserReducer;
