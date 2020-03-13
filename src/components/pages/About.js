@@ -6,12 +6,6 @@ export default function  About(){
       <article className="article">
         <h2>Qui sommes nous?</h2>
         <p>Nous sommes un groupe de 2 étudiants en licence pro en mmi-développement web à l'IUT de Haguenau.</p>
-        <div className="flexAPropos">
-          <div className="divImageAPropos">
-            <img src="./../../../photoXav.jfif" alt="Xavier ALBIC" className="imgAPropos"></img>
-            <span>Xavier ALBIC</span>
-          </div>
-        </div>
       </article>
       <article className="article">
         <h2>Notre projet</h2>
