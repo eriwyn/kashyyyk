@@ -2,11 +2,12 @@
 
 .modal {
   width: 500px;
-  background: $colorSombre;
+  background: #eee;
   height: auto;
   border: 1px solid #ccc;
   transition: 1.1s ease-out;
   box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+  color:$colorSombre;
   filter: blur(0);
   transform: scale(1);
   opacity: 1;
@@ -73,3 +74,6 @@
   margin-right:5px;
   cursor:pointer;
 }
+
+.modal .actions .btnSuppression:hover{
+  color:$colorSombre;}

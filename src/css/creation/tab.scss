@@ -7,13 +7,15 @@
     color:$colorSombre;
     font-size: 1em;
     font-weight: bold;
-    background-color: $colorBleuClair;
+    background-color: $colorHeaderFooter;
+    color:$colorClaire;
     &:hover{
-        color:#fff;
+        color:$colorBleuClair;
     }
     display: inline-block;
 
     &.tab-active {
-        color: #fff;
+        color: $colorSombre;
+        background-color: $colorBleuClair;
     }
 }
