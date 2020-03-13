@@ -41,21 +41,29 @@ const PreviewForm = props => {
         }
     }
 
-    return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
-        <form>
-            {props.formList.map((element, index) => {
-                return <Element 
-                    key={index} 
-                    type={element.type} 
-                    position={index} 
-                    libelle={element.libelle} 
-                    texte={element.texte} 
-                    valeurs={element.valeurs} 
-                    onMouseDown={clickHandler} 
-                    selected={props.selected} />
-            })}
-        </form>
-    </div>
+    if (props.formList.length) {
+        return <div className="previsualisation" onDragOver={dragOverHandler} onDrop={dropHandler}>
+            <form>
+                {props.formList.map((element, index) => {
+                    return <Element 
+                        key={index} 
+                        type={element.type} 
+                        position={index} 
+                        libelle={element.libelle} 
+                        texte={element.texte} 
+                        valeurs={element.valeurs} 
+                        onMouseDown={clickHandler} 
+                        selected={props.selected} />
+                })}
+            </form>
+        </div>
+    } else {
+        return <div className="previsualisation empty" onDragOver={dragOverHandler} onDrop={dropHandler}>
+            <p>Veuillez glisser-déposer un élément dans cette zone</p>
+        </div>
+    }
+
+    
 }
 
 // définition des données à récupérer dans le store

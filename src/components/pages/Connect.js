@@ -83,12 +83,19 @@ export default function Connect() {
     
     return <main className="connectPage">
         <div>
-            <button onClick={() => setAction("login")}>Connexion</button>
-            <button onClick={() => setAction("register")}>Inscription</button>
+            
             {(() => {
                 switch (action) {
-                    case "login":   return <Login />;
-                    case "register": return <Register />;
+                    case "login":   return <div>
+                        <button className="tab tab-active" onClick={() => setAction("login")}>Connexion</button>
+                        <button className="tab" onClick={() => setAction("register")}>Inscription</button>
+                        <Login />
+                    </div>;
+                    case "register": return <div>
+                        <button className="tab" onClick={() => setAction("login")}>Connexion</button>
+                        <button className="tab tab-active" onClick={() => setAction("register")}>Inscription</button>
+                        <Register />
+                        </div>;
                 }
             })()}
         </div>

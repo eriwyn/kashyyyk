@@ -1,6 +1,21 @@
 @import "../variables";
 
+.previsualisation {
+    height: 620px;
+}
+
 .previsualisation form {
     display: flex;
     flex-direction: column;
+}
+
+.fenetreCreation {
+    .previsualisation{
+        &.empty {
+            background-color: #5c677d;
+            color: black;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
 }

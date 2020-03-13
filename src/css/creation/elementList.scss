@@ -1,20 +1,27 @@
 @import "../variables";
-
-.listeElements {
-    width: calc(20% - 20px);
-    margin-right: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    li {
-        margin-bottom: 10px;
-        list-style-type: none;
+main {
+    .creation {
+        .fenetreCreation {
+            .listeElements {
+                width: auto;
+                margin-right: 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            
+                li {
+                    margin-bottom: 10px;
+                    list-style-type: none;
+                }
+            
+            
+                .element_wrapper.dragover-botton, .element_wrapper.dragover-top {
+                    border: none;
+                }
+            
+            }
+              
+        }
+        
     }
-
-
-    .element_wrapper.dragover-botton, .element_wrapper.dragover-top {
-        border: none;
-    }
-
+   
 }
-  

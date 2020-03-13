@@ -24,7 +24,6 @@
   }
   
   .fenetreCreation > div {
-    width: calc(80% - 40px);
     margin: 20px;
   }
   
@@ -49,7 +48,7 @@
   }
 
   input {
-    border: 1px solid;
+    border: none;
     padding: 5px;
   }
 
