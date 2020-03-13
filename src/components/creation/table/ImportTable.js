@@ -33,7 +33,7 @@ const ImportForm = props=> {
 const mapDispatchToProps = dispatch => {
     return {
         import_file: file => {
-            dispatch({ type: "IMPORT_FORM", data: { file } });
+            dispatch({ type: "IMPORT_TABLE", data: { file } });
         }
     };
 };

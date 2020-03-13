@@ -77,7 +77,7 @@ const FormReducer=function(currentState = initialState, action){
                 currentState.selected = action.data.position;
             }
             break;
-        case "IMPORT_FILE":
+        case "IMPORT_FORM":
             if (action.data.file) {
                 currentState.updatePreview = !currentState.updatePreview;
                 currentState.updateToolBox = !currentState.updateToolBox;

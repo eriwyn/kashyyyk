@@ -76,6 +76,19 @@ const TableReducer=function(currentState = initialState, action){
                 }  
             }
             break;
+        case "IMPORT_TABLE":
+            if (action.data.file) {
+                currentState.selected = false;
+
+                let importedElements = JSON.parse(action.data.file);
+
+                currentState.head = importedElements.head;
+                currentState.body = importedElements.body;
+                currentState.head = importedElements.head;
+                currentState.row = importedElements.body.length + importedElements.head.length + importedElements.foot.length;
+                currentState.columns = importedElements.body[0].length;
+            }
+            break;
         default:
             break;
     }
