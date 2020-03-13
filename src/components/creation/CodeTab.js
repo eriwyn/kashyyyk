@@ -1,11 +1,16 @@
 import React  from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import copy from 'copy-to-clipboard';
+
 import formToHtml from '../../tools/formToHtml.js';
 import tableToHtml from '../../tools/tableToHtml.js';
 
 import '../../css/creation/codeTab.scss';
 
 const FenetreCode = props => {
+
     let contentHtml;
     switch (props.type) {
         case "formulaire":
@@ -19,7 +24,7 @@ const FenetreCode = props => {
     }
 
     return <div className="fenetreCode">
-        <h2>Votre Code : </h2>
+        <button className="copyCode" onClick={() => copy(contentHtml)}><FontAwesomeIcon icon={faCopy}></FontAwesomeIcon> Copier le code</button>
         <pre>{contentHtml}</pre>
     </div>
 }

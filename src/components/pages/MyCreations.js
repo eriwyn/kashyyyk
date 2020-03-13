@@ -87,7 +87,7 @@ const MyCreations = props => {
 const mapDispatchToProps = dispatch => {
     return {
         import_file: file => {
-            dispatch({ type: "IMPORT_FILE", data: { file } });
+            dispatch({ type: "IMPORT_FORM", data: { file } });
         }
     };
 };
