@@ -17,12 +17,26 @@
     .kep-login-facebook {
         font-size: 12px;
         padding: 10px;
+        width:210px;
+    }
+    label{
+        width:110px;
     }
 }
 
 
 .fb_reset {
     display: none;
+    
 }
 
+
+.belInput{
+    padding: 8px 14px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 

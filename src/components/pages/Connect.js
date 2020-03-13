@@ -19,59 +19,60 @@ export default function Connect() {
         return <div>
             <h1>Connexion</h1>
     
-            <fieldset>              
+            <fieldset >              
                 <ul>
                     <li>
                         <label htmlFor="email">Email : </label>
-                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com" />
+                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com" className="belInput"/>
                     </li>
                     <li>
                         <label htmlFor="mdp">Mot de passe : </label>
-                        <input type="password" name="mdp" id="mdp" placeholder="•••••" />
+                        <input type="password" name="mdp" id="mdp" placeholder="•••••" className="belInput"/>
                     </li>
                     <li>
                         <button type="button">Se connecter</button>
                     </li>
+
+                    <li><FacebookLogin
+                    appId="1232819600261251"
+                    fields="name,email,picture"
+                    callback={responseFacebook}
+                    textButton="Connexion avec Facebook"
+                    /></li>
+            
+                    <li><GoogleLogin
+                    clientId="996141723746-ak7frmnjnt3ul7e6blabl6ir7s0d9b5h.apps.googleusercontent.com"
+                    buttonText="Connexion avec Google"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    /></li>
+
                 </ul>
             </fieldset>
-    
-            <FacebookLogin
-              appId="1232819600261251"
-              fields="name,email,picture"
-              callback={responseFacebook}
-              textButton="Connexion avec Facebook"
-            />
-    
-            <GoogleLogin
-              clientId="996141723746-ak7frmnjnt3ul7e6blabl6ir7s0d9b5h.apps.googleusercontent.com"
-              buttonText="Connexion avec Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              theme="dark"
-            />
+                
         </div>
     }
 
     const Register = () => {
         return <div>
                 <h1>Inscription</h1>
-                <fieldset>
+                <fieldset >
                     <ul>
                         <li>
                             <label htmlFor="email">Email : </label>
-                            <input type="email" name="email" id="email" placeholder="exemple@gmail.com" />
+                            <input type="email" name="email" id="email" placeholder="exemple@gmail.com" className="belInput"/>
                         </li>
                         <li>
                             <label htmlFor="nom">Nom : </label>
-                            <input type="text" name="nom" id="nom" placeholder="nom" />
+                            <input type="text" name="nom" id="nom" placeholder="nom" className="belInput"/>
                         </li>
                         <li>
                             <label htmlFor="prenom">Prénom : </label>
-                            <input type="text" name="prenom" id="prenom" placeholder="prenom" />
+                            <input type="text" name="prenom" id="prenom" placeholder="prenom" className="belInput"/>
                         </li>
                         <li>
                             <label htmlFor="mdp">Mot de passe : </label>
-                            <input type="password" name="mdp" id="mdp" placeholder="•••••" />
+                            <input type="password" name="mdp" id="mdp" placeholder="•••••" className="belInput"/>
                         </li>
                         <li>
                             <button type="button">S'inscrire</button>
